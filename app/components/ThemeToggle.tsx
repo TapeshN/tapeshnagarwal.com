@@ -1,0 +1,34 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
+export default function ThemeToggle() {
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
+
+  useEffect(() => {
+    const saved = localStorage.getItem("theme");
+    const initial =
+      saved === "light" || saved === "dark" ? saved : "dark";
+    setTheme(initial);
+  }, []);
+
+  const toggle = () => {
+    const next = theme === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+    setTheme(next);
+  };
+
+  return (
+    <button
+      className="theme-toggle mono"
+      onClick={toggle}
+      aria-label="Toggle theme"
+    >
+      <span className="theme-toggle__track">
+        <span className="theme-toggle__dot" />
+      </span>
+      <span className="theme-toggle__label">{theme}</span>
+    </button>
+  );
+}
