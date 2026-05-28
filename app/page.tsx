@@ -80,7 +80,7 @@ export default function Home() {
                 <span className="now-card__tag">building</span>
                 <LiveClock />
               </div>
-              <h3 className="now-card__title">TapQuality.ai</h3>
+              <h3 className="now-card__title"><a href="https://tapquality.ai" target="_blank" rel="noopener noreferrer">TapQuality.ai</a></h3>
               <p className="now-card__body">
                 Multi-agent orchestration for release readiness. Outer-loop principals
                 (Route · Check · Fetch · Scan · Build) govern policy and learn across
@@ -99,7 +99,7 @@ export default function Home() {
                 <span className="now-card__tag">shipping</span>
                 <span className="now-card__time">v0.5.x</span>
               </div>
-              <h3 className="now-card__title">@qulib/mcp</h3>
+              <h3 className="now-card__title"><a href="https://www.npmjs.com/package/@qulib/mcp" target="_blank" rel="noopener noreferrer">@qulib/mcp</a></h3>
               <p className="now-card__body">
                 An open-source MCP server that answers a single question:{" "}
                 <em>is this ready to ship?</em>{" "}
@@ -121,7 +121,7 @@ export default function Home() {
                 <span className="now-card__tag">teaching</span>
                 <span className="now-card__time">live</span>
               </div>
-              <h3 className="now-card__title">NotQuality.com</h3>
+              <h3 className="now-card__title"><a href="https://notquality.com" target="_blank" rel="noopener noreferrer">NotQuality.com</a></h3>
               <p className="now-card__body">
                 A LeetCode-style platform for QA engineers — a deliberately broken app
                 with 48 documented bugs across UI, API, events, accessibility, performance,

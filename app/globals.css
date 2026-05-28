@@ -246,6 +246,8 @@ html[data-theme="light"] .theme-toggle__dot { transform: translateX(12px); }
 }
 .now-card__time { color: var(--fg-dim); }
 .now-card__title { font-size: 22px; letter-spacing: -0.02em; font-weight: 500; margin: 0; }
+.now-card__title a { color: inherit; text-decoration: none; }
+.now-card__title a:hover { color: var(--accent); }
 .now-card__body { color: var(--fg-mute); font-size: 14.5px; margin: 0; }
 .now-card__body em { font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--fg); }
 .now-card__list { list-style: none; padding: 0; margin: 4px 0 0; font-size: 11.5px; color: var(--fg-mute); }
