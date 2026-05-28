@@ -13,7 +13,7 @@ export default function Home() {
           <a className="brand" href="#top">
             <span className="brand__dot" aria-hidden="true" />
             <span className="brand__name">Tapesh Nagarwal</span>
-            <span className="brand__meta mono">/ swe</span>
+            <span className="brand__meta mono">/ qa-sdet-aie</span>
           </a>
           <nav className="nav mono">
             <a href="#now">now</a>
@@ -33,7 +33,7 @@ export default function Home() {
           <div className="hero__meta mono">
             <span className="status-pill">
               <span className="status-pill__dot" />
-              <span>available for senior IC roles · ai infra</span>
+              <span>senior specialist · quality engineer</span>
             </span>
             <span className="hero__loc">sayreville, nj &nbsp;·&nbsp; et</span>
           </div>
@@ -163,42 +163,42 @@ export default function Home() {
             <span className="section__meta mono">3 projects</span>
           </header>
 
-          {/* Project 1: TapQuality */}
+          {/* Project 1: NotQuality */}
           <article className="project">
             <header className="project__head">
               <div className="project__title-row">
-                <h3 className="project__title">TapQuality.ai</h3>
-                <span className="project__kind mono">/ agentic orchestration platform</span>
+                <h3 className="project__title">NotQuality.com</h3>
+                <span className="project__kind mono">/ qa training platform</span>
               </div>
-              <a className="project__cta mono" href="https://tapquality.ai" target="_blank" rel="noopener noreferrer">
+              <a className="project__cta mono" href="https://notquality.com" target="_blank" rel="noopener noreferrer">
                 visit ↗
               </a>
             </header>
 
             <div className="project__body">
               <IframeEmbed
-                src="https://tapquality.ai"
-                title="TapQuality.ai"
-                chromeUrl="tapquality.ai"
+                src="https://notquality.com"
+                title="NotQuality.com"
+                chromeUrl="notquality.com"
                 chromeStatus="live"
               />
 
               <aside className="project__meta">
                 <p className="project__lede">
-                  An outer/inner-loop multi-agent system. Principal agents govern, learn,
-                  and orchestrate; deployable execution agents run inside client projects
-                  with a polymorphic config that overrides skills per engagement.
+                  A LeetCode for QA. Nine playground labs built on top of a deliberately
+                  broken application — 48 documented intentional bugs across UI, API,
+                  events, accessibility, performance, and mobile.
                 </p>
                 <ul className="project__bullets">
-                  <li>Step-based pipeline with typed <span className="mono">PASS / WARN / FAIL / SKIP</span> returns and roll-up resolution.</li>
-                  <li>Machine-readable guardrails driving both agent rules and shell scripts.</li>
-                  <li>File-based and MCP-based handoff bridge connecting Claude Code and Cursor sessions.</li>
-                  <li>RAG layer (ChromaDB → pgvector) for cross-engagement pattern learning.</li>
+                  <li>Dual auth system separating learner accounts from instructor scoring.</li>
+                  <li>Challenge engine with deterministic verdicts and severity-weighted scoring.</li>
+                  <li>Bug catalog covers the failure modes most QA interviews never test for.</li>
+                  <li>Shipping on Vercel + Neon Postgres.</li>
                 </ul>
                 <dl className="project__specs mono">
-                  <div><dt>stack</dt><dd>ts · node · mcp · chromadb · pgvector</dd></div>
-                  <div><dt>role</dt><dd>founder / principal engineer</dd></div>
-                  <div><dt>stage</dt><dd>private alpha</dd></div>
+                  <div><dt>stack</dt><dd>next · neon postgres · vercel</dd></div>
+                  <div><dt>role</dt><dd>founder / engineer</dd></div>
+                  <div><dt>users</dt><dd>open enrollment</dd></div>
                 </dl>
               </aside>
             </div>
@@ -284,42 +284,42 @@ export default function Home() {
             </div>
           </article>
 
-          {/* Project 3: NotQuality */}
+          {/* Project 3: TapQuality */}
           <article className="project">
             <header className="project__head">
               <div className="project__title-row">
-                <h3 className="project__title">NotQuality.com</h3>
-                <span className="project__kind mono">/ qa training platform</span>
+                <h3 className="project__title">TapQuality.ai</h3>
+                <span className="project__kind mono">/ agentic orchestration platform</span>
               </div>
-              <a className="project__cta mono" href="https://notquality.com" target="_blank" rel="noopener noreferrer">
+              <a className="project__cta mono" href="https://tapquality.ai" target="_blank" rel="noopener noreferrer">
                 visit ↗
               </a>
             </header>
 
             <div className="project__body">
               <IframeEmbed
-                src="https://notquality.com"
-                title="NotQuality.com"
-                chromeUrl="notquality.com"
+                src="https://tapquality.ai"
+                title="TapQuality.ai"
+                chromeUrl="tapquality.ai"
                 chromeStatus="live"
               />
 
               <aside className="project__meta">
                 <p className="project__lede">
-                  A LeetCode for QA. Nine playground labs built on top of a deliberately
-                  broken application — 48 documented intentional bugs across UI, API,
-                  events, accessibility, performance, and mobile.
+                  An outer/inner-loop multi-agent system. Principal agents govern, learn,
+                  and orchestrate; deployable execution agents run inside client projects
+                  with a polymorphic config that overrides skills per engagement.
                 </p>
                 <ul className="project__bullets">
-                  <li>Dual auth system separating learner accounts from instructor scoring.</li>
-                  <li>Challenge engine with deterministic verdicts and severity-weighted scoring.</li>
-                  <li>Bug catalog covers the failure modes most QA interviews never test for.</li>
-                  <li>Shipping on Vercel + Neon Postgres.</li>
+                  <li>Step-based pipeline with typed <span className="mono">PASS / WARN / FAIL / SKIP</span> returns and roll-up resolution.</li>
+                  <li>Machine-readable guardrails driving both agent rules and shell scripts.</li>
+                  <li>File-based and MCP-based handoff bridge connecting Claude Code and Cursor sessions.</li>
+                  <li>RAG layer (ChromaDB → pgvector) for cross-engagement pattern learning.</li>
                 </ul>
                 <dl className="project__specs mono">
-                  <div><dt>stack</dt><dd>next · neon postgres · vercel</dd></div>
-                  <div><dt>role</dt><dd>founder / engineer</dd></div>
-                  <div><dt>users</dt><dd>open enrollment</dd></div>
+                  <div><dt>stack</dt><dd>ts · node · mcp · chromadb · pgvector</dd></div>
+                  <div><dt>role</dt><dd>founder / principal engineer</dd></div>
+                  <div><dt>stage</dt><dd>private alpha</dd></div>
                 </dl>
               </aside>
             </div>
@@ -341,22 +341,22 @@ export default function Home() {
               <ul className="stack-col__list">
                 <li>Claude</li>
                 <li>MCP Protocol</li>
-                <li>Agentic Orchestration</li>
                 <li>Multi-Agent Architecture</li>
-                <li>Prompt Engineering</li>
+                <li>Agentic Orchestration</li>
                 <li>RAG · ChromaDB · pgvector</li>
-                <li>Cursor</li>
-                <li>AgentOps</li>
+                <li>Prompt Engineering</li>
                 <li>LLM Evaluation</li>
+                <li>AgentOps</li>
+                <li>Cursor</li>
               </ul>
             </div>
             <div className="stack-col">
               <h4 className="stack-col__head mono">languages</h4>
               <ul className="stack-col__list">
-                <li>TypeScript</li>
-                <li>JavaScript</li>
                 <li>Python</li>
+                <li>TypeScript</li>
                 <li>Java</li>
+                <li>JavaScript</li>
                 <li>SQL</li>
               </ul>
             </div>
@@ -365,9 +365,10 @@ export default function Home() {
               <ul className="stack-col__list">
                 <li>Node.js</li>
                 <li>Spring Boot</li>
-                <li>GraphQL</li>
                 <li>REST</li>
+                <li>GraphQL</li>
                 <li>gRPC</li>
+                <li>ETL</li>
               </ul>
             </div>
             <div className="stack-col">
@@ -381,22 +382,22 @@ export default function Home() {
               <h4 className="stack-col__head mono">cloud &amp; infra</h4>
               <ul className="stack-col__list">
                 <li>AWS</li>
-                <li>Docker</li>
                 <li>Kubernetes (EKS)</li>
+                <li>Docker</li>
                 <li>GCP</li>
-                <li>Jenkins</li>
                 <li>Vercel</li>
+                <li>Jenkins</li>
                 <li>Neon Postgres</li>
               </ul>
             </div>
             <div className="stack-col">
               <h4 className="stack-col__head mono">reliability</h4>
               <ul className="stack-col__list">
-                <li>DataDog</li>
+                <li>Selenium</li>
                 <li>Cypress</li>
+                <li>DataDog</li>
                 <li>JMeter</li>
                 <li>REST-Assured</li>
-                <li>Selenium</li>
               </ul>
             </div>
           </div>
