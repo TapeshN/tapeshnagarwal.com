@@ -274,6 +274,7 @@ export default function Home() {
                   <li>axe-core accessibility checks rolled into the readiness score.</li>
                   <li>Release confidence as a single number plus a structured &quot;why&quot;.</li>
                   <li>MIT licensed, currently shipping v0.5.x.</li>
+                  <li>Companion: <a href="https://github.com/TapeshN/strata" target="_blank" rel="noopener noreferrer">strata</a> — an open journal of patterns from building the agentic QA org, published as the work ships.</li>
                 </ul>
                 <dl className="project__specs mono">
                   <div><dt>stack</dt><dd>ts · node · mcp · axe-core</dd></div>
