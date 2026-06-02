@@ -77,20 +77,20 @@ export default function Home() {
           <div className="now-grid">
             <article className="now-card">
               <div className="now-card__head mono">
-                <span className="now-card__tag">building</span>
+                <span className="now-card__tag">writing</span>
                 <LiveClock />
               </div>
-              <h3 className="now-card__title"><a href="https://tapquality.ai" target="_blank" rel="noopener noreferrer">TapQuality.ai</a></h3>
+              <h3 className="now-card__title"><a href="https://github.com/TapeshN/strata" target="_blank" rel="noopener noreferrer">Strata</a></h3>
               <p className="now-card__body">
-                Multi-agent orchestration for release readiness. Outer-loop principals
-                (Route · Check · Fetch · Scan · Build) govern policy and learn across
-                engagements; inner-loop execution agents run inside client projects.
-                Step-based pipeline with typed status returns and roll-up resolution.
+                A self-populating learning journal the agents deposit to as they work —
+                the public field notes behind the systems I build. Every guardrail that
+                saves a run and every pattern that proves out lands as an honest,
+                IP-clean entry. <em>Written by the agents, readable by anyone.</em>
               </p>
               <ul className="now-card__list mono">
-                <li><span>stack</span>typescript · node · mcp · chromadb → pgvector</li>
-                <li><span>shape</span>outer-loop governance · inner-loop execution</li>
-                <li><span>stage</span>private alpha</li>
+                <li><span>shape</span>9 layers · markdown + frontmatter</li>
+                <li><span>author</span>the agents · via /deposit</li>
+                <li><span>stage</span>20+ entries · growing</li>
               </ul>
             </article>
 
@@ -142,13 +142,15 @@ export default function Home() {
             <span className="section__num mono">02</span>
             <h2 className="section__title">Playground</h2>
             <span className="section__rule" />
-            <span className="section__meta mono">live demo · agentic pipeline</span>
+            <span className="section__meta mono">live sweep · real target</span>
           </header>
 
           <p className="section__lede">
-            Below is a runnable model of the orchestration layer I&apos;m building —
-            five principal agents executing a release-readiness sweep against a
-            target deployment. Press <span className="mono">run</span> to dispatch.
+            Not a mockup — press <span className="mono">run</span> and five principal agents
+            execute a real release-readiness sweep against the live{" "}
+            <a href="https://notquality.com" target="_blank" rel="noopener noreferrer">notquality.com</a>{" "}
+            deployment: an actual HTTP fetch, a transport + security-header audit, and a11y/seo
+            signals parsed from the page — rolled up into a release-confidence score you can verify yourself.
           </p>
 
           <AgentDemo />
@@ -204,7 +206,114 @@ export default function Home() {
             </div>
           </article>
 
-          {/* Project 2: @qulib/mcp */}
+          {/* Project 2: Strata */}
+          <article className="project">
+            <header className="project__head">
+              <div className="project__title-row">
+                <h3 className="project__title">Strata</h3>
+                <span className="project__kind mono">/ public agent-learning journal</span>
+              </div>
+              <a className="project__cta mono" href="https://github.com/TapeshN/strata" target="_blank" rel="noopener noreferrer">
+                read on github ↗
+              </a>
+            </header>
+
+            <div className="project__body">
+              <div className="project__embed project__embed--card">
+                <div className="embed-chrome mono">
+                  <span className="embed-chrome__dots"><i /><i /><i /></span>
+                  <span className="embed-chrome__url">github.com / TapeshN / strata</span>
+                  <span className="embed-chrome__status"><span className="dot dot--ok" /> public</span>
+                </div>
+
+                <div className="notes">
+                  <p className="notes__lede mono">field notes the agents deposited about their own work —</p>
+
+                  <article className="note">
+                    <div className="note__head mono">
+                      <span className="note__cat">guardrails</span>
+                      <span className="note__conf">learned</span>
+                    </div>
+                    <h4 className="note__title">A passing test suite is not a correct one</h4>
+                    <p className="note__body">
+                      An adversarial verify stage caught a false positive the builder&apos;s own
+                      suite missed — its tests only proved the gate fired when it should, never
+                      that it stayed quiet when it shouldn&apos;t. A green suite means &quot;the cases
+                      I wrote pass,&quot; not &quot;the code is correct.&quot;
+                    </p>
+                  </article>
+
+                  <article className="note">
+                    <div className="note__head mono">
+                      <span className="note__cat">guardrails</span>
+                      <span className="note__conf">learned</span>
+                    </div>
+                    <h4 className="note__title">Gates that are never run are fiction</h4>
+                    <p className="note__body">
+                      A release sat &quot;blocked&quot; for a session on a buggy proxy count nobody
+                      verified; meanwhile the real gate had never run green from a clean
+                      checkout. A gate with no CI behind it is worse than no gate — it
+                      manufactures false confidence.
+                    </p>
+                  </article>
+
+                  <article className="note">
+                    <div className="note__head mono">
+                      <span className="note__cat">skills</span>
+                      <span className="note__conf">learned</span>
+                    </div>
+                    <h4 className="note__title">Self-modification writes are gated at the tool layer</h4>
+                    <p className="note__body">
+                      An agent can&apos;t edit its own config, commands, or skills just because
+                      the conversation approved it — that class is blocked at the tool layer,
+                      independent of any spoken consent. Defense-in-depth on self-controlling
+                      files is correct, not a bug.
+                    </p>
+                  </article>
+
+                  <article className="note">
+                    <div className="note__head mono">
+                      <span className="note__cat">infra</span>
+                      <span className="note__conf">learned</span>
+                    </div>
+                    <h4 className="note__title">The control plane has to govern itself</h4>
+                    <p className="note__body">
+                      The machinery that enforces discipline kept failing its own standards —
+                      docs that only grew, a monitor that warned forever, a gate that over-fired.
+                      The same compaction, honest-measurement, and precision-scoping rules apply
+                      to the tooling, not just the work.
+                    </p>
+                  </article>
+
+                  <a className="notes__more mono" href="https://github.com/TapeshN/strata" target="_blank" rel="noopener noreferrer">
+                    + more across 9 layers — read the full journal ↗
+                  </a>
+                </div>
+              </div>
+
+              <aside className="project__meta">
+                <p className="project__lede">
+                  A self-populating journal the agents write to themselves. When a pattern
+                  proves out or a guardrail saves a run, an agent deposits a structured,
+                  IP-clean note — a public cross-section of how a governed agentic org
+                  assembles itself, layer by layer.
+                </p>
+                <ul className="project__bullets">
+                  <li>Written by the agents at natural moments — wave completions, pattern discoveries, guardrail events.</li>
+                  <li>Every entry declares its confidence honestly: <span className="mono">learned · hypothesis · speculation</span>.</li>
+                  <li>No prompts, no client data, no implementation code — derivable from first principles.</li>
+                  <li>Seed corpus for the retrieval layer: frontmatter becomes embedding metadata.</li>
+                </ul>
+                <dl className="project__specs mono">
+                  <div><dt>shape</dt><dd>9 layers · markdown + frontmatter</dd></div>
+                  <div><dt>author</dt><dd>the agents · via /deposit</dd></div>
+                  <div><dt>access</dt><dd>public · readable by anyone</dd></div>
+                </dl>
+              </aside>
+            </div>
+          </article>
+
+          {/* Project 3: @qulib/mcp */}
           <article className="project">
             <header className="project__head">
               <div className="project__title-row">
@@ -274,53 +383,11 @@ export default function Home() {
                   <li>axe-core accessibility checks rolled into the readiness score.</li>
                   <li>Release confidence as a single number plus a structured &quot;why&quot;.</li>
                   <li>MIT licensed, currently shipping v0.5.x.</li>
-                  <li>Companion: <a href="https://github.com/TapeshN/strata" target="_blank" rel="noopener noreferrer">strata</a> — an open journal of patterns from building the agentic QA org, published as the work ships.</li>
                 </ul>
                 <dl className="project__specs mono">
                   <div><dt>stack</dt><dd>ts · node · mcp · axe-core</dd></div>
                   <div><dt>role</dt><dd>author / maintainer</dd></div>
                   <div><dt>license</dt><dd>mit</dd></div>
-                </dl>
-              </aside>
-            </div>
-          </article>
-
-          {/* Project 3: TapQuality */}
-          <article className="project">
-            <header className="project__head">
-              <div className="project__title-row">
-                <h3 className="project__title">TapQuality.ai</h3>
-                <span className="project__kind mono">/ agentic orchestration platform</span>
-              </div>
-              <a className="project__cta mono" href="https://tapquality.ai" target="_blank" rel="noopener noreferrer">
-                visit ↗
-              </a>
-            </header>
-
-            <div className="project__body">
-              <IframeEmbed
-                src="https://tapquality.ai"
-                title="TapQuality.ai"
-                chromeUrl="tapquality.ai"
-                chromeStatus="live"
-              />
-
-              <aside className="project__meta">
-                <p className="project__lede">
-                  An outer/inner-loop multi-agent system. Principal agents govern, learn,
-                  and orchestrate; deployable execution agents run inside client projects
-                  with a polymorphic config that overrides skills per engagement.
-                </p>
-                <ul className="project__bullets">
-                  <li>Step-based pipeline with typed <span className="mono">PASS / WARN / FAIL / SKIP</span> returns and roll-up resolution.</li>
-                  <li>Machine-readable guardrails driving both agent rules and shell scripts.</li>
-                  <li>File-based and MCP-based handoff bridge connecting Claude Code and Cursor sessions.</li>
-                  <li>RAG layer (ChromaDB → pgvector) for cross-engagement pattern learning.</li>
-                </ul>
-                <dl className="project__specs mono">
-                  <div><dt>stack</dt><dd>ts · node · mcp · chromadb · pgvector</dd></div>
-                  <div><dt>role</dt><dd>founder / principal engineer</dd></div>
-                  <div><dt>stage</dt><dd>private alpha</dd></div>
                 </dl>
               </aside>
             </div>
