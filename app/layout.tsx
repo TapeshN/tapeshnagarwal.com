@@ -24,11 +24,11 @@ const instrumentSerif = Instrument_Serif({
 export const metadata: Metadata = {
   title: "Tapesh Nagarwal — Software Engineer",
   description:
-    "Seven years building reliable distributed systems and release infrastructure. Now architecting an outer/inner-loop multi-agent platform on the Anthropic MCP protocol.",
+    "Seven years building reliable distributed systems, automation frameworks, and release infrastructure. Now building MCP-based agent orchestration for release readiness.",
   openGraph: {
     title: "Tapesh Nagarwal — Software Engineer",
     description:
-      "Shipping agentic systems that work in production. Building TapQuality.ai — multi-agent orchestration for release readiness.",
+      "Shipping agentic systems that work in production. MCP-based agent orchestration for release readiness — typed pipelines, deterministic guardrails, observable rollouts.",
     url: "https://tapeshnagarwal.com",
     siteName: "Tapesh Nagarwal",
     locale: "en_US",

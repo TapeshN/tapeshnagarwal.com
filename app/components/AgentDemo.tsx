@@ -1,20 +1,16 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback, useMemo } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 const AGENTS = [
   { id: "route", name: "route", role: "selects the readiness sweep for this target" },
-  { id: "check", name: "check", role: "static + policy checks against guardrails" },
-  { id: "fetch", name: "fetch", role: "auth-aware fetch of deployed surface" },
-  { id: "scan",  name: "scan",  role: "axe-core + interaction probes" },
+  { id: "check", name: "check", role: "transport + security-header audit" },
+  { id: "fetch", name: "fetch", role: "live fetch of the deployed surface" },
+  { id: "scan",  name: "scan",  role: "a11y + seo signals parsed from the page" },
   { id: "build", name: "build", role: "rolls up verdict + release confidence" },
 ];
 
-const TARGETS: Record<string, { label: string; auth: string; outcome: "warn" | "pass" | "fail" }> = {
-  staging:    { label: "staging.example.com", auth: "session", outcome: "warn" },
-  production: { label: "app.example.com",     auth: "sso",     outcome: "pass" },
-  preview:    { label: "preview-pr-482.dev",  auth: "none",    outcome: "fail" },
-};
+const TARGET = "notquality.com";
 
 type Tag = "info" | "pass" | "warn" | "fail" | "skip";
 type AgentState = "run" | "pass" | "warn" | "fail" | "skip";
@@ -25,74 +21,32 @@ interface Step {
   msg: string;
 }
 
-function buildScript(targetKey: string): Step[] {
-  const t = TARGETS[targetKey];
-  const out = t.outcome;
-  return [
-    { agent: "route", tag: "info", msg: `selecting sweep: <em>release-readiness@v3</em> for ${t.label}` },
-    { agent: "route", tag: "pass", msg: "policy bundle resolved · 4 tools registered" },
-
-    { agent: "check", tag: "info", msg: "static guardrails: env vars · secrets · build manifest" },
-    { agent: "check",
-      tag: out === "fail" ? "fail" : out === "warn" ? "warn" : "pass",
-      msg: out === "fail"
-        ? "guardrail breach · <em>SECRET_KEY</em> resolved from .env.local"
-        : out === "warn"
-          ? "1 advisory · unpinned dep <em>lodash@^4</em>"
-          : "all guardrails green" },
-
-    { agent: "fetch", tag: "info", msg: `auth shape detected: <em>${t.auth}</em>` },
-    { agent: "fetch",
-      tag: t.auth === "none" ? "skip" : "pass",
-      msg: t.auth === "none" ? "no credentialed walk — anonymous surface only" : "session walk complete · 14 routes captured" },
-
-    { agent: "scan", tag: "info", msg: "running axe-core · interaction probes · contract checks" },
-    { agent: "scan",
-      tag: out === "fail" ? "fail" : out === "warn" ? "warn" : "pass",
-      msg: out === "fail"
-        ? "12 a11y violations · 3 serious · contract drift on <em>/api/orders</em>"
-        : out === "warn"
-          ? "3 a11y advisories · color-contrast on <em>/billing</em>"
-          : "no violations · contracts stable" },
-
-    { agent: "build", tag: "info", msg: "rolling up verdict from step returns" },
-    { agent: "build",
-      tag: out === "fail" ? "fail" : out === "warn" ? "warn" : "pass",
-      msg: out === "fail"
-        ? "release confidence · 41 / 100 · <em>do not ship</em>"
-        : out === "warn"
-          ? "release confidence · 78 / 100 · <em>ship with note</em>"
-          : "release confidence · 96 / 100 · <em>ready</em>" },
-  ];
-}
-
-const FINAL_STATE = {
-  pass: { score: 96, label: "READY",   className: "ok" },
-  warn: { score: 78, label: "WARN",    className: "warn" },
-  fail: { score: 41, label: "BLOCKED", className: "fail" },
-};
-
-function ts(i: number) {
-  return `+${(i * 0.34).toFixed(2)}s`;
+interface SweepResult {
+  target: string;
+  finalUrl: string;
+  latencyMs?: number;
+  steps: Step[];
+  verdict: { score: number; label: string; className: string };
 }
 
 type LineKind =
   | { kind: "boot"; t: string; m: string }
   | { kind: "line"; t: string; tag: Tag; agent: string; m: string };
 
+function ts(i: number) {
+  return `+${(i * 0.34).toFixed(2)}s`;
+}
+
 export default function AgentDemo() {
-  const [target, setTarget] = useState("staging");
   const [running, setRunning] = useState(false);
   const [completed, setCompleted] = useState(false);
   const [stepIdx, setStepIdx] = useState(-1);
+  const [total, setTotal] = useState(0);
   const [agentStates, setAgentStates] = useState<Record<string, AgentState>>({});
   const [lines, setLines] = useState<LineKind[]>([]);
+  const [verdict, setVerdict] = useState<SweepResult["verdict"] | null>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const termRef = useRef<HTMLDivElement>(null);
-
-  const script = useMemo(() => buildScript(target), [target]);
-  const outcome = TARGETS[target].outcome;
-  const final = FINAL_STATE[outcome];
 
   useEffect(() => () => { if (timerRef.current) clearTimeout(timerRef.current); }, []);
 
@@ -103,63 +57,70 @@ export default function AgentDemo() {
   const reset = useCallback(() => {
     if (timerRef.current) clearTimeout(timerRef.current);
     setRunning(false); setCompleted(false);
-    setStepIdx(-1); setAgentStates({}); setLines([]);
+    setStepIdx(-1); setTotal(0); setAgentStates({}); setLines([]); setVerdict(null);
   }, []);
 
-  const run = useCallback(() => {
-    reset();
-    setRunning(true);
-    let i = 0;
+  const animate = useCallback((steps: Step[], finalVerdict: SweepResult["verdict"]) => {
+    setTotal(steps.length);
     const states: Record<string, AgentState> = {};
-    const acc: LineKind[] = [{ kind: "boot", t: "boot", m: `tapquality run · target=${TARGETS[target].label}` }];
-    setLines([...acc]);
-
+    let i = 0;
     const tick = () => {
-      if (i >= script.length) {
-        setRunning(false); setCompleted(true);
+      if (i >= steps.length) {
+        setRunning(false);
+        setCompleted(true);
+        setVerdict(finalVerdict);
         return;
       }
-      const step = script[i];
-      const next = { ...states };
-      if (step.tag === "info") {
-        next[step.agent] = "run";
-      } else {
-        next[step.agent] = step.tag === "skip" ? "skip" : (step.tag as AgentState);
-      }
-      setAgentStates(next);
-      Object.assign(states, next);
-      acc.push({ kind: "line", t: ts(i + 1), tag: step.tag, agent: step.agent, m: step.msg });
-      setLines([...acc]);
+      const step = steps[i];
+      states[step.agent] = step.tag === "info" ? "run" : (step.tag as AgentState);
+      setAgentStates({ ...states });
+      setLines((prev) => [...prev, { kind: "line", t: ts(i + 1), tag: step.tag, agent: step.agent, m: step.msg }]);
       setStepIdx(i);
       i += 1;
-      timerRef.current = setTimeout(tick, step.tag === "info" ? 380 : 520);
+      timerRef.current = setTimeout(tick, step.tag === "info" ? 360 : 520);
     };
-    timerRef.current = setTimeout(tick, 200);
-  }, [reset, script, target]);
+    timerRef.current = setTimeout(tick, 220);
+  }, []);
 
-  const handleTargetChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setTarget(e.target.value);
+  const run = useCallback(async () => {
     reset();
-  };
+    setRunning(true);
+    setLines([{ kind: "boot", t: "boot", m: `live sweep · dispatching to ${TARGET}` }]);
 
-  const verdict = completed
-    ? final
+    try {
+      const res = await fetch(`/api/sweep?target=${encodeURIComponent(TARGET)}`, { cache: "no-store" });
+      const data: SweepResult & { error?: string } = await res.json();
+      if (!res.ok || !data.steps) {
+        throw new Error(data.error || `sweep failed (HTTP ${res.status})`);
+      }
+      setLines((prev) => [...prev, { kind: "boot", t: "ok", m: `connected · ${data.finalUrl}` }]);
+      animate(data.steps, data.verdict);
+    } catch (e: unknown) {
+      const msg = e instanceof Error ? e.message : "sweep failed";
+      setLines((prev) => [...prev, { kind: "line", t: ts(1), tag: "fail", agent: "route", m: `dispatch error · ${msg}` }]);
+      setRunning(false);
+      setCompleted(true);
+      setVerdict({ score: 0, label: "ERROR", className: "fail" });
+    }
+  }, [reset, animate]);
+
+  const view = completed && verdict
+    ? verdict
     : running
-      ? { score: "—", label: "running", className: "" }
-      : { score: "—", label: "idle", className: "" };
+      ? { score: "—" as const, label: "running", className: "" }
+      : { score: "—" as const, label: "idle", className: "" };
 
   return (
     <div className="demo" role="region" aria-label="Interactive agentic pipeline demo">
       <div className="demo__bar">
         <div className="demo__target">
           <span>target</span>
-          <select value={target} onChange={handleTargetChange} disabled={running}>
-            <option value="staging">staging.example.com</option>
-            <option value="production">app.example.com</option>
-            <option value="preview">preview-pr-482.dev</option>
-          </select>
+          <span style={{ color: "var(--fg)" }}>{TARGET}</span>
           <span style={{ opacity: 0.6 }}>·</span>
-          <span>auth: {TARGETS[target].auth}</span>
+          <span className="status-pill status-pill--sm">
+            <span className="status-pill__dot" />
+            <span>live</span>
+          </span>
         </div>
         <div className="demo__legend">
           <span><i className="dot" style={{ background: "var(--accent)" }} /> pass</span>
@@ -172,7 +133,7 @@ export default function AgentDemo() {
           onClick={running ? undefined : completed ? reset : run}
           disabled={running}
         >
-          {running ? "running…" : completed ? "reset" : "▸ run sweep"}
+          {running ? "running…" : completed ? "reset" : "▸ run live sweep"}
         </button>
       </div>
 
@@ -204,7 +165,7 @@ export default function AgentDemo() {
             <div className="terminal__line">
               <span className="terminal__t">—</span>
               <span className="terminal__m" style={{ color: "var(--fg-dim)" }}>
-                press <em style={{ color: "var(--accent)", fontStyle: "normal" }}>run sweep</em> to dispatch the principal agents
+                press <em style={{ color: "var(--accent)", fontStyle: "normal" }}>run live sweep</em> to probe {TARGET} for real
               </span>
             </div>
           )}
@@ -234,18 +195,18 @@ export default function AgentDemo() {
       <div className="demo__footer">
         <div className="demo__verdict">
           <span>verdict</span>
-          <span className={`demo__score${verdict.className ? ` demo__score--${verdict.className}` : ""}`}>
-            {verdict.label}
+          <span className={`demo__score${view.className ? ` demo__score--${view.className}` : ""}`}>
+            {view.label}
           </span>
           <span style={{ opacity: 0.6 }}>·</span>
           <span>
             release confidence:{" "}
             <span style={{ color: "var(--fg)" }}>
-              {verdict.score}{typeof verdict.score === "number" ? " / 100" : ""}
+              {view.score}{typeof view.score === "number" ? " / 100" : ""}
             </span>
           </span>
         </div>
-        <div>steps: {stepIdx + 1} / {script.length}</div>
+        <div>steps: {stepIdx + 1} / {total || AGENTS.length * 2 + 1}</div>
       </div>
     </div>
   );
