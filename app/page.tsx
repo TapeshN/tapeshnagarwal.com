@@ -43,10 +43,10 @@ export default function Home() {
           </h1>
 
           <p className="hero__lede">
-            Seven years building reliable distributed systems and release infrastructure.
-            Now architecting an outer/inner-loop multi-agent platform on the Anthropic MCP protocol —
-            with the boring rigor (typed pipelines, deterministic guardrails, observable rollouts) that
-            keeps AI from being a demo.
+            Seven years building reliable distributed systems, automation frameworks, and
+            release infrastructure. Now building MCP-based agent orchestration for release
+            readiness — with typed pipelines, deterministic guardrails, and observable
+            rollouts that keep AI from being just another demo.
           </p>
 
           <div className="hero__quick mono">
@@ -146,7 +146,9 @@ export default function Home() {
           </header>
 
           <p className="section__lede">
-            Not a mockup — press <span className="mono">run</span> and five principal agents
+            Not a mockup. Outer-loop principal agents — Route, Check, Fetch, Scan, and Build —
+            govern policy and learning across engagements, while inner-loop execution agents run
+            inside client projects. Press <span className="mono">run</span> and those five principals
             execute a real release-readiness sweep against the live{" "}
             <a href="https://notquality.com" target="_blank" rel="noopener noreferrer">notquality.com</a>{" "}
             deployment: an actual HTTP fetch, a transport + security-header audit, and a11y/seo
@@ -412,7 +414,7 @@ export default function Home() {
                 <li>Multi-Agent Architecture</li>
                 <li>Agentic Orchestration</li>
                 <li>RAG · ChromaDB · pgvector</li>
-                <li>Prompt Engineering</li>
+                <li>Agent instruction design</li>
                 <li>LLM Evaluation</li>
                 <li>AgentOps</li>
                 <li>Cursor</li>
@@ -506,11 +508,6 @@ export default function Home() {
               <a className="contact__row" href="https://www.npmjs.com/package/@qulib/mcp" target="_blank" rel="noopener noreferrer">
                 <span className="contact__k">npm</span>
                 <span className="contact__v">npmjs.com/package/@qulib/mcp</span>
-                <span className="contact__arrow">↗</span>
-              </a>
-              <a className="contact__row" href="tel:+17326685408">
-                <span className="contact__k">phone</span>
-                <span className="contact__v">+1 (732) 668-5408</span>
                 <span className="contact__arrow">↗</span>
               </a>
               <div className="contact__row contact__row--static">
