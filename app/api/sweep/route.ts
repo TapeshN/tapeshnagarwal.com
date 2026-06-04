@@ -58,7 +58,7 @@ export async function GET(req: NextRequest) {
       redirect: "follow",
       signal: ctrl.signal,
       cache: "no-store",
-      headers: { "user-agent": "tapquality-sweep/1.0 (+https://tapeshnagarwal.com)" },
+      headers: { "user-agent": "release-readiness-sweep/1.0 (+https://tapeshnagarwal.com)" },
     });
     body = await res.text();
   } catch (e: unknown) {

@@ -147,8 +147,8 @@ export default function Home() {
 
           <p className="section__lede">
             Not a mockup. Outer-loop principal agents — Route, Check, Fetch, Scan, and Build —
-            govern policy and learning across engagements, while inner-loop execution agents run
-            inside client projects. Press <span className="mono">run</span> and those five principals
+            govern policy and learning while inner-loop execution agents run inside project
+            workflows. Press <span className="mono">run</span> and those five principals
             execute a real release-readiness sweep against the live{" "}
             <a href="https://notquality.com" target="_blank" rel="noopener noreferrer">notquality.com</a>{" "}
             deployment: an actual HTTP fetch, a transport + security-header audit, and a11y/seo
