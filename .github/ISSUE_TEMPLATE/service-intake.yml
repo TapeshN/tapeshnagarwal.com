@@ -1,0 +1,96 @@
+name: Service Intake Request
+description: Submit a service request — describe your problem, stack, and timeline so we can scope the engagement.
+title: "[Intake] "
+labels:
+  - intake
+body:
+  - type: input
+    id: company_name
+    attributes:
+      label: Company / Your Name
+      description: Who are you? Company name or individual name.
+      placeholder: Acme Corp or Jane Smith
+    validations:
+      required: true
+
+  - type: input
+    id: contact_email
+    attributes:
+      label: Contact Email
+      description: Best email address to reach you. We will reply within 2 business days.
+      placeholder: you@example.com
+    validations:
+      required: true
+
+  - type: textarea
+    id: help_needed
+    attributes:
+      label: What do you need help with?
+      description: >
+        Describe the problem in as much detail as you can. What is broken,
+        slow, untested, or risky? What outcome would "done" look like?
+      placeholder: |
+        We ship a SaaS product and have no automated tests. Every deploy
+        feels risky. We need someone to build a test harness and establish
+        a baseline quality signal before our Q3 launch.
+    validations:
+      required: true
+
+  - type: textarea
+    id: repos_urls
+    attributes:
+      label: Relevant Repos / URLs
+      description: >
+        Links to your repository, staging environment, production app, or
+        any documentation that helps us understand the codebase. Public or
+        private links are both fine — we will sign an NDA before accessing
+        anything private.
+      placeholder: |
+        https://github.com/your-org/your-repo
+        https://staging.yourapp.com
+    validations:
+      required: false
+
+  - type: input
+    id: tech_stack
+    attributes:
+      label: Tech Stack
+      description: Primary languages, frameworks, and infrastructure.
+      placeholder: "Next.js, Postgres, AWS ECS, GitHub Actions"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: qa_maturity
+    attributes:
+      label: Current Testing / QA Maturity
+      description: Honest self-assessment — this shapes our recommended starting point.
+      options:
+        - "None — no automated tests at all"
+        - "Some — a handful of tests, no CI discipline"
+        - "Mature — solid test suite, looking to level up"
+        - "Unsure — not sure what we have"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: timeline
+    attributes:
+      label: Timeline
+      description: How urgently do you need to get started?
+      options:
+        - "ASAP — we have a blocker right now"
+        - "Weeks — targeting kick-off within a month"
+        - "Months — planning ahead, not urgent"
+        - "Exploring — just researching options"
+    validations:
+      required: false
+
+  - type: textarea
+    id: anything_else
+    attributes:
+      label: Anything Else?
+      description: Budget range, team size, constraints, questions, or context that does not fit above.
+      placeholder: "Team of 4 engineers, ~$5k budget, working in a regulated environment."
+    validations:
+      required: false
