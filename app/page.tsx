@@ -21,6 +21,7 @@ export default function Home() {
             <a href="#playground">playground</a>
             <a href="#stack">stack</a>
             <a href="#contact">contact</a>
+            <a href="/intake" className="nav__cta">hire me</a>
           </nav>
           <ThemeToggle />
         </div>
@@ -515,6 +516,15 @@ export default function Home() {
                 <span className="contact__v">Sayreville, NJ · Eastern Time</span>
                 <span className="contact__arrow" />
               </div>
+            </div>
+
+            <div className="contact__intake">
+              <p className="contact__intake-lede">
+                Looking to hire? Skip the back-and-forth.
+              </p>
+              <a className="intake-cta-btn mono" href="/intake">
+                start an engagement ↗
+              </a>
             </div>
           </div>
         </section>
