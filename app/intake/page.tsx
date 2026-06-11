@@ -2,10 +2,6 @@
 
 import { useState, useRef } from "react";
 import ThemeToggle from "../components/ThemeToggle";
-import type { Metadata } from "next";
-
-// Note: Metadata is declared separately below for static export.
-// This file uses "use client" so the metadata export is in a sibling.
 
 const QA_MATURITY_OPTIONS = [
   "",

@@ -18,6 +18,17 @@ function isRateLimited(ip: string): boolean {
 }
 
 // ── Validation helpers ───────────────────────────────────────────────────────
+const MAX_LENGTHS: Record<string, number> = {
+  company_name: 200,
+  contact_email: 254,
+  help_needed: 8000,
+  repos_urls: 2000,
+  tech_stack: 500,
+  qa_maturity: 200,
+  timeline: 200,
+  anything_else: 2000,
+};
+
 function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
@@ -106,6 +117,17 @@ export async function POST(req: NextRequest) {
   }
   if (!help_needed) {
     return NextResponse.json({ error: "Please describe what you need help with." }, { status: 422 });
+  }
+
+  // ── Field-length guard ───────────────────────────────────────────────────────
+  for (const [field, max] of Object.entries(MAX_LENGTHS)) {
+    const val = trimStr(body[field]);
+    if (val.length > max) {
+      return NextResponse.json(
+        { error: `Field '${field}' exceeds maximum length of ${max} characters.` },
+        { status: 422 },
+      );
+    }
   }
 
   // ── Token presence check ─────────────────────────────────────────────────────
