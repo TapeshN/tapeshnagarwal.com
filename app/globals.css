@@ -113,9 +113,18 @@ img, svg, iframe { max-width: 100%; display: block; }
 .brand__name { letter-spacing: -0.015em; }
 .brand__meta { color: var(--fg-dim); font-size: 13px; }
 
-.nav { display: flex; gap: 22px; font-size: 13px; }
+.nav { display: flex; gap: 22px; font-size: 13px; align-items: center; }
 .nav a { color: var(--fg-mute); transition: color .15s var(--ease); }
 .nav a:hover { color: var(--fg); }
+.nav__cta {
+  color: var(--accent-ink) !important;
+  background: var(--accent);
+  border-radius: 999px;
+  padding: 4px 13px;
+  font-size: 12px;
+  transition: filter .15s var(--ease) !important;
+}
+.nav__cta:hover { filter: brightness(1.1); color: var(--accent-ink) !important; }
 @media (max-width: 760px) { .nav { display: none; } }
 
 .theme-toggle {
@@ -499,6 +508,23 @@ html[data-theme="light"] .theme-toggle__dot { transform: translateX(12px); }
 .contact__arrow { color: var(--fg-dim); text-align: right; transition: transform .2s var(--ease); }
 .contact__row:not(.contact__row--static):hover .contact__arrow { transform: translate(2px, -2px); color: var(--accent); }
 
+/* contact intake CTA */
+.contact__intake {
+  display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+  margin-top: 28px;
+}
+.contact__intake-lede { font-size: 15px; color: var(--fg-mute); margin: 0; }
+.intake-cta-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--accent); color: var(--accent-ink);
+  border-radius: var(--r-md);
+  font-size: 13px; font-weight: 500;
+  transition: filter .15s var(--ease);
+  white-space: nowrap;
+}
+.intake-cta-btn:hover { filter: brightness(1.08); }
+
 /* ───── Footer ───── */
 .footer {
   display: flex; justify-content: space-between; align-items: center;
@@ -653,6 +679,201 @@ html[data-theme="light"] .theme-toggle__dot { transform: translateX(12px); }
 .demo__score--ok { color: var(--accent); }
 .demo__score--warn { color: var(--warn); }
 .demo__score--fail { color: var(--fail); }
+
+/* ───── Intake page ───── */
+.intake-main { min-height: calc(100vh - 60px); }
+
+.intake-hero { padding-top: clamp(56px, 10vw, 112px); padding-bottom: clamp(32px, 5vw, 56px); }
+.intake-hero__back { margin-bottom: 24px; font-size: 13px; }
+.intake-hero__back a { color: var(--fg-dim); transition: color .15s var(--ease); }
+.intake-hero__back a:hover { color: var(--fg); }
+.intake-hero__meta { margin-bottom: 22px; }
+.intake-hero__title {
+  font-size: clamp(28px, 4vw, 52px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+  margin: 0 0 20px;
+  text-wrap: balance;
+}
+.intake-hero__lede {
+  font-size: clamp(15px, 1.4vw, 18px);
+  color: var(--fg-mute);
+  max-width: 62ch;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.intake-body { padding-bottom: clamp(48px, 8vw, 88px); }
+
+.intake-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: clamp(28px, 4vw, 56px);
+  align-items: start;
+}
+@media (max-width: 860px) { .intake-layout { grid-template-columns: 1fr; } }
+
+/* sidebar */
+.intake-sidebar {
+  display: flex; flex-direction: column; gap: 24px;
+  position: sticky; top: 80px;
+  font-size: 13px;
+}
+@media (max-width: 860px) { .intake-sidebar { position: static; } }
+.intake-sidebar__block { display: flex; flex-direction: column; gap: 8px; }
+.intake-sidebar__label {
+  font-size: 11px; text-transform: uppercase; letter-spacing: .12em;
+  color: var(--fg-dim); padding-bottom: 8px;
+  border-bottom: var(--bw) solid var(--border);
+}
+.intake-sidebar__steps {
+  margin: 0; padding-left: 18px; color: var(--fg-mute);
+  display: flex; flex-direction: column; gap: 6px;
+}
+.intake-sidebar__steps li { line-height: 1.4; }
+.intake-sidebar__list {
+  margin: 0; padding-left: 18px; color: var(--fg-mute);
+  display: flex; flex-direction: column; gap: 4px;
+}
+.intake-sidebar__link {
+  color: var(--accent); font-size: 13px;
+  transition: opacity .15s var(--ease);
+}
+.intake-sidebar__link:hover { opacity: .8; }
+
+/* form container */
+.intake-form-wrap { min-width: 0; }
+
+.intake-form {
+  display: flex; flex-direction: column; gap: 20px;
+}
+
+/* honeypot — visually hidden, not display:none so assistive tech doesn't flag it */
+.intake-honeypot {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.intake-row { display: flex; gap: 16px; }
+.intake-row--half > * { flex: 1 1 0; min-width: 0; }
+@media (max-width: 560px) { .intake-row { flex-direction: column; } }
+
+.intake-field { display: flex; flex-direction: column; gap: 6px; }
+
+.intake-label {
+  font-size: 12px; color: var(--fg-mute); letter-spacing: 0;
+}
+.intake-req { color: var(--accent); }
+.intake-hint {
+  font-size: 12.5px; color: var(--fg-dim); margin: 0;
+  line-height: 1.45; text-wrap: pretty;
+}
+
+.intake-input,
+.intake-textarea,
+.intake-select {
+  width: 100%;
+  background: var(--bg-soft);
+  border: var(--bw) solid var(--border);
+  border-radius: var(--r-md);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-size: 14px;
+  padding: 10px 14px;
+  transition: border-color .15s var(--ease), box-shadow .15s var(--ease);
+  outline: none;
+}
+.intake-input:focus,
+.intake-textarea:focus,
+.intake-select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 18%, transparent);
+}
+.intake-input::placeholder,
+.intake-textarea::placeholder { color: var(--fg-dim); }
+.intake-textarea { resize: vertical; min-height: 80px; line-height: 1.55; }
+
+.intake-select-wrap { position: relative; }
+.intake-select {
+  appearance: none;
+  padding-right: 32px;
+  cursor: pointer;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--fg-mute) 50%),
+    linear-gradient(135deg, var(--fg-mute) 50%, transparent 50%);
+  background-position: calc(100% - 14px) 50%, calc(100% - 10px) 50%;
+  background-size: 4px 4px, 4px 4px;
+  background-repeat: no-repeat;
+}
+.intake-select option[value=""] { color: var(--fg-dim); }
+
+/* submit actions */
+.intake-actions {
+  display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+  padding-top: 6px;
+}
+.intake-actions__note { font-size: 11.5px; color: var(--fg-dim); }
+
+.intake-btn {
+  appearance: none; border: 0; cursor: pointer;
+  font-family: var(--mono); font-size: 13px; font-weight: 500;
+  border-radius: var(--r-md);
+  padding: 10px 22px;
+  transition: filter .15s var(--ease), opacity .15s var(--ease), border-color .15s var(--ease);
+}
+.intake-btn--primary {
+  background: var(--accent); color: var(--accent-ink);
+}
+.intake-btn--primary:hover:not(:disabled) { filter: brightness(1.08); }
+.intake-btn--primary:disabled { opacity: .55; cursor: not-allowed; }
+.intake-btn--ghost {
+  background: transparent;
+  border: var(--bw) solid var(--border);
+  color: var(--fg-mute);
+}
+.intake-btn--ghost:hover { border-color: var(--accent); color: var(--fg); }
+
+/* error banner */
+.intake-error {
+  padding: 12px 16px;
+  background: color-mix(in oklab, var(--fail) 12%, var(--bg-soft));
+  border: var(--bw) solid var(--fail);
+  border-radius: var(--r-md);
+  font-size: 13.5px; color: var(--fail);
+}
+
+/* success / unavailable notice */
+.intake-notice {
+  border: var(--bw) solid var(--border);
+  border-radius: var(--r-lg);
+  background: var(--bg-card);
+  padding: 36px 32px;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.intake-notice--success { border-color: var(--accent); }
+.intake-notice--warn    { border-color: var(--warn); }
+.intake-notice__icon {
+  font-size: 24px; font-weight: 500;
+  width: 44px; height: 44px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.intake-notice--success .intake-notice__icon { color: var(--accent); background: color-mix(in oklab, var(--accent) 12%, transparent); }
+.intake-notice--warn    .intake-notice__icon { color: var(--warn);   background: color-mix(in oklab, var(--warn)   12%, transparent); }
+.intake-notice__title { font-size: 22px; font-weight: 500; letter-spacing: -0.02em; margin: 0; }
+.intake-notice__body  { font-size: 15px; color: var(--fg-mute); margin: 0; }
+.intake-notice__body a { color: var(--accent); }
+.intake-notice__links {
+  margin: 0; padding: 0; list-style: none;
+  display: flex; flex-direction: column; gap: 6px;
+  font-size: 13px;
+}
+.intake-notice__links a { color: var(--accent); }
 
 /* ───── Small things ───── */
 ::selection { background: color-mix(in oklab, var(--accent) 35%, transparent); color: var(--fg); }
