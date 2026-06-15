@@ -72,69 +72,20 @@ export default function Home() {
             <span className="section__num mono">01</span>
             <h2 className="section__title">Now</h2>
             <span className="section__rule" />
-            <span className="section__meta mono">updated · live</span>
+            <span className="section__meta mono"><LiveClock /></span>
           </header>
 
-          <div className="now-grid">
-            <article className="now-card">
-              <div className="now-card__head mono">
-                <span className="now-card__tag">writing</span>
-                <LiveClock />
-              </div>
-              <h3 className="now-card__title"><a href="https://github.com/TapeshN/strata" target="_blank" rel="noopener noreferrer">Strata</a></h3>
-              <p className="now-card__body">
-                A self-populating learning journal the agents deposit to as they work —
-                the public field notes behind the systems I build. Every guardrail that
-                saves a run and every pattern that proves out lands as an honest,
-                IP-clean entry. <em>Written by the agents, readable by anyone.</em>
-              </p>
-              <ul className="now-card__list mono">
-                <li><span>shape</span>9 layers · markdown + frontmatter</li>
-                <li><span>author</span>the agents · via /deposit</li>
-                <li><span>stage</span>20+ entries · growing</li>
-              </ul>
-            </article>
-
-            <article className="now-card">
-              <div className="now-card__head mono">
-                <span className="now-card__tag">shipping</span>
-                <span className="now-card__time">v0.5.x</span>
-              </div>
-              <h3 className="now-card__title"><a href="https://www.npmjs.com/package/@qulib/mcp" target="_blank" rel="noopener noreferrer">@qulib/mcp</a></h3>
-              <p className="now-card__body">
-                An open-source MCP server that answers a single question:{" "}
-                <em>is this ready to ship?</em>{" "}
-                Four tools — <span className="mono">analyze_app</span>,{" "}
-                <span className="mono">explore_auth</span>,{" "}
-                <span className="mono">detect_auth</span>,{" "}
-                <span className="mono">qulib_score_automation</span> —
-                with auth-aware scanning and a deterministic release-confidence score.
-              </p>
-              <ul className="now-card__list mono">
-                <li><span>license</span>mit</li>
-                <li><span>runtime</span>node · stdio mcp transport</li>
-                <li><span>install</span>npm i @qulib/mcp</li>
-              </ul>
-            </article>
-
-            <article className="now-card">
-              <div className="now-card__head mono">
-                <span className="now-card__tag">teaching</span>
-                <span className="now-card__time">live</span>
-              </div>
-              <h3 className="now-card__title"><a href="https://notquality.com" target="_blank" rel="noopener noreferrer">NotQuality.com</a></h3>
-              <p className="now-card__body">
-                A LeetCode-style platform for QA engineers — a deliberately broken app
-                with 48 documented bugs across UI, API, events, accessibility, performance,
-                and mobile. Dual auth, challenge engine, severity-weighted scoring.
-              </p>
-              <ul className="now-card__list mono">
-                <li><span>labs</span>9 playgrounds · 48 intentional defects</li>
-                <li><span>infra</span>vercel · neon postgres</li>
-                <li><span>cohort</span>open enrollment</li>
-              </ul>
-            </article>
-          </div>
+          <p className="section__lede">
+            Building MCP-based agent orchestration for release readiness — typed pipelines,
+            deterministic guardrails, and observable rollouts. Shipping{" "}
+            <a href="https://www.npmjs.com/package/@qulib/mcp" target="_blank" rel="noopener noreferrer">@qulib/mcp</a>,
+            teaching on{" "}
+            <a href="https://notquality.com" target="_blank" rel="noopener noreferrer">NotQuality.com</a>,
+            and documenting the work in{" "}
+            <a href="https://github.com/TapeshN/strata" target="_blank" rel="noopener noreferrer">Strata</a>,
+            a self-populating journal the agents write as they go. The detail on each lives in{" "}
+            <a href="#work">selected work</a> below.
+          </p>
         </section>
 
         {/* ─── Playground ───────────────────────────────────── */}
