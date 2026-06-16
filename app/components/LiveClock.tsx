@@ -22,5 +22,5 @@ export default function LiveClock() {
     return () => clearInterval(id);
   }, []);
 
-  return <span className="now-card__time">{time}</span>;
+  return <span>{time}</span>;
 }

@@ -76,16 +76,41 @@ export default function Home() {
           </header>
 
           <p className="section__lede">
-            Building MCP-based agent orchestration for release readiness — typed pipelines,
-            deterministic guardrails, and observable rollouts. Shipping{" "}
-            <a href="https://www.npmjs.com/package/@qulib/mcp" target="_blank" rel="noopener noreferrer">@qulib/mcp</a>,
-            teaching on{" "}
-            <a href="https://notquality.com" target="_blank" rel="noopener noreferrer">NotQuality.com</a>,
-            and documenting the work in{" "}
-            <a href="https://github.com/TapeshN/strata" target="_blank" rel="noopener noreferrer">Strata</a>,
-            a self-populating journal the agents write as they go. The detail on each lives in{" "}
+            Three things in flight right now — full detail on each lives in{" "}
             <a href="#work">selected work</a> below.
           </p>
+
+          <div className="now-focus">
+            <a className="now-focus__item" href="https://www.npmjs.com/package/@qulib/mcp" target="_blank" rel="noopener noreferrer">
+              <span className="now-focus__tag mono">shipping</span>
+              <span className="now-focus__title">@qulib/mcp</span>
+              <span className="now-focus__note">
+                Open-source MCP that answers one question — &quot;is this ready to ship?&quot; — with
+                seven deterministic readiness checks an agent can call.
+              </span>
+              <span className="now-focus__meta mono">v0.10.0 · npm · mit</span>
+            </a>
+
+            <a className="now-focus__item" href="https://notquality.com" target="_blank" rel="noopener noreferrer">
+              <span className="now-focus__tag mono">teaching</span>
+              <span className="now-focus__title">NotQuality.com</span>
+              <span className="now-focus__note">
+                A LeetCode for QA — a deliberately broken app with 48 documented bugs and a
+                severity-weighted challenge engine.
+              </span>
+              <span className="now-focus__meta mono">live · 9 labs · vercel + neon</span>
+            </a>
+
+            <a className="now-focus__item" href="https://github.com/TapeshN/strata" target="_blank" rel="noopener noreferrer">
+              <span className="now-focus__tag mono">writing</span>
+              <span className="now-focus__title">Strata</span>
+              <span className="now-focus__note">
+                A self-populating journal the agents write as they work — the public field notes
+                behind the systems I build.
+              </span>
+              <span className="now-focus__meta mono">public · 9 layers · 20+ entries</span>
+            </a>
+          </div>
         </section>
 
         {/* ─── Playground ───────────────────────────────────── */}
