@@ -294,7 +294,7 @@ export default function Home() {
                       <p className="pkg__tag mono">&quot;is this ready to ship?&quot; — for deployed web apps</p>
                     </div>
                     <div className="pkg__badges mono">
-                      <span className="badge">v0.5.x</span>
+                      <span className="badge">v0.10.0</span>
                       <span className="badge">MIT</span>
                       <span className="badge badge--accent">mcp · stdio</span>
                     </div>
@@ -306,6 +306,10 @@ export default function Home() {
                   </div>
 
                   <div className="pkg__tools">
+                    <div className="pkg__tool">
+                      <span className="pkg__tool-name mono">qulib_score_confidence</span>
+                      <span className="pkg__tool-desc">flagship — fuses every signal into one verdict: ship / caution / hold / block, with a 0–100 confidence score.</span>
+                    </div>
                     <div className="pkg__tool">
                       <span className="pkg__tool-name mono">analyze_app</span>
                       <span className="pkg__tool-desc">crawls the deployed surface, returns a structured readiness report.</span>
@@ -320,7 +324,15 @@ export default function Home() {
                     </div>
                     <div className="pkg__tool">
                       <span className="pkg__tool-name mono">qulib_score_automation</span>
-                      <span className="pkg__tool-desc">weighted release-confidence score with diagnostic breakdown.</span>
+                      <span className="pkg__tool-desc">scores a repo&apos;s test-automation maturity across weighted dimensions.</span>
+                    </div>
+                    <div className="pkg__tool">
+                      <span className="pkg__tool-name mono">qulib_score_api</span>
+                      <span className="pkg__tool-desc">discovers API endpoints and scores their test coverage.</span>
+                    </div>
+                    <div className="pkg__tool">
+                      <span className="pkg__tool-name mono">qulib_scaffold_tests</span>
+                      <span className="pkg__tool-desc">generates a ready-to-run Cypress scaffold from a deployed URL.</span>
                     </div>
                   </div>
                 </div>
@@ -329,14 +341,14 @@ export default function Home() {
               <aside className="project__meta">
                 <p className="project__lede">
                   A deterministic quality layer that AI agents can call. The point isn&apos;t
-                  &quot;let the LLM judge&quot; — it&apos;s giving the agent four sharp, reproducible
+                  &quot;let the LLM judge&quot; — it&apos;s giving the agent seven sharp, reproducible
                   checks and letting it reason over real signal.
                 </p>
                 <ul className="project__bullets">
                   <li>Auth-aware scanning with bounded session walks.</li>
                   <li>axe-core accessibility checks rolled into the readiness score.</li>
                   <li>Release confidence as a single number plus a structured &quot;why&quot;.</li>
-                  <li>MIT licensed, currently shipping v0.5.x.</li>
+                  <li>MIT licensed, currently shipping v0.10.0.</li>
                 </ul>
                 <dl className="project__specs mono">
                   <div><dt>stack</dt><dd>ts · node · mcp · axe-core</dd></div>
