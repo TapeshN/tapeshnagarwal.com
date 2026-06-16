@@ -2,7 +2,7 @@ import ThemeToggle from "./components/ThemeToggle";
 import LiveClock from "./components/LiveClock";
 import CopyButton from "./components/CopyButton";
 import AgentDemo from "./components/AgentDemo";
-import IframeEmbed from "./components/IframeEmbed";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -157,12 +157,28 @@ export default function Home() {
             </header>
 
             <div className="project__body">
-              <IframeEmbed
-                src="https://notquality.com"
-                title="NotQuality.com"
-                chromeUrl="notquality.com"
-                chromeStatus="live"
-              />
+              <div className="project__embed">
+                <div className="embed-chrome mono">
+                  <span className="embed-chrome__dots"><i /><i /><i /></span>
+                  <span className="embed-chrome__url">notquality.com</span>
+                  <span className="embed-chrome__status"><span className="dot dot--ok" /> live</span>
+                </div>
+                <a
+                  className="embed-shot"
+                  href="https://notquality.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open notquality.com in a new tab"
+                >
+                  <Image
+                    src="/notquality-preview.png"
+                    alt="notquality.com homepage — a QA training platform with playground labs and scored bug-hunt challenges"
+                    fill
+                    sizes="(max-width: 920px) 100vw, 60vw"
+                    className="embed-shot__img"
+                  />
+                </a>
+              </div>
 
               <aside className="project__meta">
                 <p className="project__lede">
