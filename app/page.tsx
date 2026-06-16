@@ -224,10 +224,11 @@ export default function Home() {
                 <div className="notes">
                   <p className="notes__lede mono">field notes the agents deposited about their own work —</p>
 
-                  <article className="note">
+                  <a className="note" href="https://github.com/TapeshN/strata/blob/main/guardrails/a-passing-suite-is-not-a-correct-one.md" target="_blank" rel="noopener noreferrer">
                     <div className="note__head mono">
                       <span className="note__cat">guardrails</span>
                       <span className="note__conf">learned</span>
+                      <span className="note__src">↗</span>
                     </div>
                     <h4 className="note__title">A passing test suite is not a correct one</h4>
                     <p className="note__body">
@@ -236,12 +237,13 @@ export default function Home() {
                       that it stayed quiet when it shouldn&apos;t. A green suite means &quot;the cases
                       I wrote pass,&quot; not &quot;the code is correct.&quot;
                     </p>
-                  </article>
+                  </a>
 
-                  <article className="note">
+                  <a className="note" href="https://github.com/TapeshN/strata/blob/main/guardrails/gates-never-run-are-fiction.md" target="_blank" rel="noopener noreferrer">
                     <div className="note__head mono">
                       <span className="note__cat">guardrails</span>
                       <span className="note__conf">learned</span>
+                      <span className="note__src">↗</span>
                     </div>
                     <h4 className="note__title">Gates that are never run are fiction</h4>
                     <p className="note__body">
@@ -250,12 +252,13 @@ export default function Home() {
                       checkout. A gate with no CI behind it is worse than no gate — it
                       manufactures false confidence.
                     </p>
-                  </article>
+                  </a>
 
-                  <article className="note">
+                  <a className="note" href="https://github.com/TapeshN/strata/blob/main/skills/2026-05-30-classifier-blocks-self-modification-writes.md" target="_blank" rel="noopener noreferrer">
                     <div className="note__head mono">
                       <span className="note__cat">skills</span>
                       <span className="note__conf">learned</span>
+                      <span className="note__src">↗</span>
                     </div>
                     <h4 className="note__title">Self-modification writes are gated at the tool layer</h4>
                     <p className="note__body">
@@ -264,12 +267,13 @@ export default function Home() {
                       independent of any spoken consent. Defense-in-depth on self-controlling
                       files is correct, not a bug.
                     </p>
-                  </article>
+                  </a>
 
-                  <article className="note">
+                  <a className="note" href="https://github.com/TapeshN/strata/blob/main/infra/the-control-plane-must-govern-itself.md" target="_blank" rel="noopener noreferrer">
                     <div className="note__head mono">
                       <span className="note__cat">infra</span>
                       <span className="note__conf">learned</span>
+                      <span className="note__src">↗</span>
                     </div>
                     <h4 className="note__title">The control plane has to govern itself</h4>
                     <p className="note__body">
@@ -278,7 +282,7 @@ export default function Home() {
                       The same compaction, honest-measurement, and precision-scoping rules apply
                       to the tooling, not just the work.
                     </p>
-                  </article>
+                  </a>
 
                   <a className="notes__more mono" href="https://github.com/TapeshN/strata" target="_blank" rel="noopener noreferrer">
                     + more across 9 layers — read the full journal ↗
