@@ -176,7 +176,7 @@ export default function Home() {
               <span className="now-focus__tag mono">teaching</span>
               <span className="now-focus__title">NotQuality.com</span>
               <span className="now-focus__note">
-                A LeetCode for QA — a deliberately broken app with 48 documented bugs and a
+                A LeetCode for QA — a deliberately broken app with 76 documented bugs and a
                 severity-weighted challenge engine.
               </span>
               <span className="now-focus__meta mono">live · 9 labs · vercel + neon</span>
@@ -264,7 +264,7 @@ export default function Home() {
               <aside className="project__meta">
                 <p className="project__lede">
                   A LeetCode for QA. Nine playground labs built on top of a deliberately
-                  broken application — 48 documented intentional bugs across UI, API,
+                  broken application — 76 documented intentional bugs across UI, API,
                   events, accessibility, performance, and mobile.
                 </p>
                 <ul className="project__bullets">
