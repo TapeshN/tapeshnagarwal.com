@@ -30,7 +30,6 @@ export default function IntakePage() {
   const [state, setState] = useState<FormState>("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const [unavailable, setUnavailable] = useState<UnavailableData | null>(null);
-  const [issueUrl, setIssueUrl] = useState("");
   const formRef = useRef<HTMLFormElement>(null);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -62,7 +61,6 @@ export default function IntakePage() {
         return;
       }
 
-      setIssueUrl(data.issue_url || "");
       setState("success");
       formRef.current?.reset();
     } catch {
@@ -154,20 +152,11 @@ export default function IntakePage() {
                   <div className="intake-notice__icon">✓</div>
                   <h2 className="intake-notice__title">Intake received</h2>
                   <p className="intake-notice__body">
-                    I&apos;ll review it and follow up within 2 business days. In the
-                    meantime you can{" "}
-                    {issueUrl ? (
-                      <a href={issueUrl} target="_blank" rel="noopener noreferrer">
-                        track the issue on GitHub ↗
-                      </a>
-                    ) : (
-                      "track the issue on GitHub"
-                    )}
-                    .
+                    I&apos;ll review it and follow up within 2 business days.
                   </p>
                   <button
                     className="intake-btn intake-btn--ghost"
-                    onClick={() => { setState("idle"); setIssueUrl(""); }}
+                    onClick={() => { setState("idle"); }}
                   >
                     Submit another
                   </button>
@@ -211,17 +200,17 @@ export default function IntakePage() {
                   {/* Required fields */}
                   <div className="intake-row intake-row--half">
                     <div className="intake-field">
-                      <label className="intake-label mono" htmlFor="company_name">
-                        Company / Your Name <span className="intake-req">*</span>
+                      <label className="intake-label mono" htmlFor="your_name">
+                        Your Name <span className="intake-req">*</span>
                       </label>
                       <input
-                        id="company_name"
-                        name="company_name"
+                        id="your_name"
+                        name="your_name"
                         type="text"
                         className="intake-input"
-                        placeholder="Acme Corp or Jane Smith"
+                        placeholder="Jane Smith"
                         required
-                        autoComplete="organization"
+                        autoComplete="name"
                       />
                     </div>
                     <div className="intake-field">
@@ -238,6 +227,20 @@ export default function IntakePage() {
                         autoComplete="email"
                       />
                     </div>
+                  </div>
+
+                  <div className="intake-field">
+                    <label className="intake-label mono" htmlFor="company">
+                      Company
+                    </label>
+                    <input
+                      id="company"
+                      name="company"
+                      type="text"
+                      className="intake-input"
+                      placeholder="Acme Corp"
+                      autoComplete="organization"
+                    />
                   </div>
 
                   <div className="intake-field">

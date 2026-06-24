@@ -22,7 +22,8 @@ function isRateLimited(ip: string): boolean {
 
 // ── Validation helpers ───────────────────────────────────────────────────────
 const MAX_LENGTHS: Record<string, number> = {
-  company_name: 200,
+  your_name: 200,
+  company: 200,
   contact_email: 254,
   help_needed: 8000,
   repos_urls: 2000,
@@ -42,7 +43,7 @@ function trimStr(v: unknown): string {
 
 // ── Field mapping → platform contract ────────────────────────────────────────
 // Platform expects: { name, email, company?, projectType?, message?, website_hp }
-// Form sends:       company_name, contact_email, help_needed, repos_urls,
+// Form sends:       your_name, company, contact_email, help_needed, repos_urls,
 //                   tech_stack, qa_maturity, timeline, anything_else, website_hp
 function buildPlatformPayload(body: Record<string, unknown>): {
   name: string;
@@ -52,7 +53,8 @@ function buildPlatformPayload(body: Record<string, unknown>): {
   message?: string;
   website_hp: string;
 } {
-  const company_name = trimStr(body.company_name);
+  const your_name = trimStr(body.your_name);
+  const company = trimStr(body.company);
   const contact_email = trimStr(body.contact_email);
   const help_needed = trimStr(body.help_needed);
   const repos_urls = trimStr(body.repos_urls);
@@ -75,9 +77,9 @@ function buildPlatformPayload(body: Record<string, unknown>): {
   const projectType = projectTypeParts.join(" · ") || undefined;
 
   return {
-    name: company_name,
+    name: your_name,
     email: contact_email,
-    company: company_name || undefined,
+    company: company || undefined,
     projectType,
     message: messageParts.join("\n\n") || undefined,
     website_hp: trimStr(body.website_hp),
@@ -115,12 +117,12 @@ export async function POST(req: NextRequest) {
   }
 
   // ── Validate required fields ────────────────────────────────────────────────
-  const company_name = trimStr(body.company_name);
+  const your_name = trimStr(body.your_name);
   const contact_email = trimStr(body.contact_email);
   const help_needed = trimStr(body.help_needed);
 
-  if (!company_name) {
-    return NextResponse.json({ error: "Company / Your Name is required." }, { status: 422 });
+  if (!your_name) {
+    return NextResponse.json({ error: "Your Name is required." }, { status: 422 });
   }
   if (!contact_email || !isValidEmail(contact_email)) {
     return NextResponse.json({ error: "A valid contact email is required." }, { status: 422 });
