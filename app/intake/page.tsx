@@ -201,7 +201,7 @@ export default function IntakePage() {
                   {/* Honeypot — hidden from real users, filled by bots */}
                   <input
                     type="text"
-                    name="website"
+                    name="website_hp"
                     tabIndex={-1}
                     aria-hidden="true"
                     autoComplete="off"
