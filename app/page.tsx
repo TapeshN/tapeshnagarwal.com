@@ -13,7 +13,7 @@ export default function Home() {
           <a className="brand" href="#top">
             <span className="brand__dot" aria-hidden="true" />
             <span className="brand__name">Tapesh Nagarwal</span>
-            <span className="brand__meta mono">/ qa-sdet-aie</span>
+            <span className="brand__meta mono">/ founder · tapquality.ai</span>
           </a>
           <nav className="nav mono">
             <a href="#approach">approach</a>
@@ -22,6 +22,7 @@ export default function Home() {
             <a href="#playground">playground</a>
             <a href="#stack">stack</a>
             <a href="#contact">contact</a>
+            <a href="https://tapquality.ai" target="_blank" rel="noopener noreferrer" className="nav__company">tapquality.ai ↗</a>
             <a href="/intake" className="nav__cta">hire me</a>
           </nav>
           <ThemeToggle />
@@ -35,25 +36,28 @@ export default function Home() {
           <div className="hero__meta mono">
             <span className="status-pill">
               <span className="status-pill__dot" />
-              <span>senior specialist · quality engineer</span>
+              <span>founder · senior qe/sdet · 7 years</span>
             </span>
             <span className="hero__loc">sayreville, nj &nbsp;·&nbsp; et</span>
           </div>
 
           <h1 className="hero__title">
-            I build the systems that answer{" "}
-            <span className="serif italic">&ldquo;should we ship?&rdquo;</span>
+            I turned a quality obsession into{" "}
+            <span className="serif italic">a governed AI engineering org</span>
           </h1>
 
           <p className="hero__lede">
-            Senior quality engineer, seven years. In an AI era the scarce skill isn&apos;t writing
-            tests — it&apos;s <strong>evaluation</strong>: defining what &ldquo;good&rdquo; means, building the
-            harness that measures it, and turning that into a release decision you can trust.
-            I ship that as real software — a release-confidence engine on npm and a graded
-            QA-practice platform — not slideware.
+            Seven years as a Senior QE/SDET taught me that the hard problem isn&apos;t writing tests
+            — it&apos;s building systems that <strong>prove software works</strong> before it ships.
+            So I built one: TapQuality AI, a multi-agent engineering org with mechanical gates,
+            adversarial verification, and eval pipelines that catch what CI misses. Most engineers
+            ship code. I built a system that ships software <em>and proves it.</em>
           </p>
 
           <div className="hero__quick mono">
+            <a className="chip chip--company" href="https://tapquality.ai" target="_blank" rel="noopener noreferrer">
+              <span className="chip__k">co</span><span className="chip__v">tapquality.ai ↗</span>
+            </a>
             <a className="chip" href="https://github.com/TapeshN" target="_blank" rel="noopener noreferrer">
               <span className="chip__k">gh</span><span className="chip__v">TapeshN</span>
             </a>
@@ -69,6 +73,29 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ─── Company hand-off banner ──────────────────────── */}
+        <section className="company-banner wrap">
+          <a className="company-card" href="https://tapquality.ai" target="_blank" rel="noopener noreferrer">
+            <div className="company-card__left">
+              <span className="company-card__label mono">what I built</span>
+              <h2 className="company-card__name">TapQuality AI</h2>
+              <p className="company-card__desc">
+                The company I founded and run — AI-native QA services, a governed multi-agent
+                factory, and release-confidence tooling for engineering teams who can&apos;t afford to
+                guess. Voice is &ldquo;we&rdquo;. This site is &ldquo;I&rdquo;.
+              </p>
+            </div>
+            <div className="company-card__right mono">
+              <span className="company-card__cta">visit tapquality.ai ↗</span>
+              <ul className="company-card__facts">
+                <li><span>services</span>QA strategy · agent design · release infra</li>
+                <li><span>products</span>qulib · notquality · agent factory</li>
+                <li><span>model</span>multi-agent · mechanically gated · self-improving</li>
+              </ul>
+            </div>
+          </a>
+        </section>
+
         {/* ─── Approach / How I think ───────────────────────── */}
         <section id="approach" className="section wrap">
           <header className="section__head">
@@ -79,10 +106,10 @@ export default function Home() {
           </header>
 
           <p className="section__lede">
-            QA taught me the real question is never &ldquo;does it pass?&rdquo; — it&apos;s{" "}
+            Seven years in QA taught me the real question is never &ldquo;does it pass?&rdquo; — it&apos;s{" "}
             <em>&ldquo;how confident are we, and where&apos;s the risk?&rdquo;</em>{" "}
-            So I build the evaluation systems that answer it: the rubric, the harness,
-            the score, and the honest verdict. Each idea below is something I&apos;ve shipped.
+            That question is what I built TapQuality around. The three principles below
+            are the engineering doctrine baked into every system I ship.
           </p>
 
           <div className="now-grid">
@@ -157,8 +184,8 @@ export default function Home() {
           </header>
 
           <p className="section__lede">
-            Three things in flight right now — full detail on each lives in{" "}
-            <a href="#work">selected work</a> below.
+            What I&apos;m actively building as founder — three things in flight. Full detail
+            on each lives in <a href="#work">selected work</a> below.
           </p>
 
           <div className="now-focus">
@@ -204,10 +231,12 @@ export default function Home() {
           </header>
 
           <p className="section__lede">
-            Not a mockup. Outer-loop principal agents — Route, Check, Fetch, Scan, and Build —
-            govern policy and learning while inner-loop execution agents run inside project
-            workflows. Press <span className="mono">run</span> and those five principals
-            execute a real release-readiness sweep against the live{" "}
+            Not a mockup — this is a slice of the multi-agent factory I run at{" "}
+            <a href="https://tapquality.ai" target="_blank" rel="noopener noreferrer">TapQuality</a>.
+            Outer-loop principal agents — Route, Check, Fetch, Scan, and Build — govern policy
+            and learning while inner-loop execution agents run inside project workflows. Press{" "}
+            <span className="mono">run</span> and those five principals execute a real
+            release-readiness sweep against the live{" "}
             <a href="https://notquality.com" target="_blank" rel="noopener noreferrer">notquality.com</a>{" "}
             deployment: an actual HTTP fetch, a transport + security-header audit, and a11y/seo
             signals parsed from the page — rolled up into a release-confidence score you can verify yourself.
@@ -574,12 +603,19 @@ export default function Home() {
 
           <div className="contact">
             <p className="contact__pitch">
-              Working on AI infrastructure, agentic platforms, or release-engineering at scale?{" "}
+              Want to work together, collaborate, or just talk systems?{" "}
               <span className="serif italic">Send a note.</span>{" "}
+              For client engagements, head to{" "}
+              <a href="https://tapquality.ai" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)" }}>tapquality.ai</a>.{" "}
               I reply to most things within a day.
             </p>
 
             <div className="contact__grid mono">
+              <a className="contact__row" href="https://tapquality.ai" target="_blank" rel="noopener noreferrer">
+                <span className="contact__k">company</span>
+                <span className="contact__v">tapquality.ai</span>
+                <span className="contact__arrow">↗</span>
+              </a>
               <a className="contact__row" href="mailto:tapeshnagarwal@gmail.com">
                 <span className="contact__k">email</span>
                 <span className="contact__v">tapeshnagarwal@gmail.com</span>
@@ -614,6 +650,9 @@ export default function Home() {
               <a className="intake-cta-btn mono" href="/intake">
                 start an engagement ↗
               </a>
+              <a className="intake-cta-btn intake-cta-btn--ghost mono" href="https://tapquality.ai" target="_blank" rel="noopener noreferrer">
+                or visit tapquality.ai ↗
+              </a>
             </div>
           </div>
         </section>
@@ -623,6 +662,8 @@ export default function Home() {
       <footer className="footer wrap mono">
         <div className="footer__line">
           <span>© 2026 Tapesh Nagarwal</span>
+          <span className="footer__sep">·</span>
+          <a href="https://tapquality.ai" target="_blank" rel="noopener noreferrer" className="footer__company-link">founder, tapquality.ai ↗</a>
           <span className="footer__sep">·</span>
           <span>built by hand · no template</span>
         </div>

@@ -77,7 +77,7 @@ export default function IntakePage() {
           <a className="brand" href="/">
             <span className="brand__dot" aria-hidden="true" />
             <span className="brand__name">Tapesh Nagarwal</span>
-            <span className="brand__meta mono">/ qa-sdet-aie</span>
+            <span className="brand__meta mono">/ founder · tapquality.ai</span>
           </a>
           <nav className="nav mono">
             <a href="/#now">now</a>

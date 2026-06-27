@@ -22,13 +22,13 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Tapesh Nagarwal — Software Engineer",
+  title: "Tapesh Nagarwal — Founder, TapQuality AI",
   description:
-    "Seven years building reliable distributed systems, automation frameworks, and release infrastructure. Now building MCP-based agent orchestration for release readiness.",
+    "Senior QE/SDET with 7 years who turned a quality obsession into a governed AI engineering org. Founder of TapQuality AI — multi-agent systems that prove software works before it ships.",
   openGraph: {
-    title: "Tapesh Nagarwal — Software Engineer",
+    title: "Tapesh Nagarwal — Founder, TapQuality AI",
     description:
-      "Shipping agentic systems that work in production. MCP-based agent orchestration for release readiness — typed pipelines, deterministic guardrails, observable rollouts.",
+      "The human principal who designed and runs TapQuality's multi-agent factory. Most engineers ship code; this person built a system that ships software and proves it.",
     url: "https://tapeshnagarwal.com",
     siteName: "Tapesh Nagarwal",
     locale: "en_US",
@@ -36,9 +36,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Tapesh Nagarwal — Software Engineer",
+    title: "Tapesh Nagarwal — Founder, TapQuality AI",
     description:
-      "Shipping agentic systems that work in production.",
+      "Senior QE/SDET who built a governed AI engineering org. Founder of TapQuality AI.",
   },
   metadataBase: new URL("https://tapeshnagarwal.com"),
 };

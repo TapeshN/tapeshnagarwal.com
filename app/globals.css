@@ -871,5 +871,114 @@ html[data-theme="light"] .theme-toggle__dot { transform: translateX(12px); }
 }
 .intake-notice__links a { color: var(--accent); }
 
+/* ───── Company banner ───── */
+.company-banner {
+  padding-top: clamp(24px, 3vw, 40px);
+  padding-bottom: clamp(8px, 2vw, 16px);
+}
+.company-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: clamp(20px, 4vw, 48px);
+  align-items: center;
+  padding: clamp(20px, 3vw, 32px) clamp(20px, 3vw, 36px);
+  border: var(--bw) solid var(--accent);
+  border-radius: var(--r-lg);
+  background: color-mix(in oklab, var(--accent) 6%, var(--bg-card));
+  color: inherit;
+  transition: background .2s var(--ease), border-color .2s var(--ease), transform .2s var(--ease);
+}
+.company-card:hover {
+  background: color-mix(in oklab, var(--accent) 10%, var(--bg-card));
+  transform: translateY(-2px);
+}
+@media (max-width: 760px) {
+  .company-card { grid-template-columns: 1fr; }
+}
+.company-card__label {
+  display: inline-block;
+  font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.company-card__name {
+  font-size: clamp(22px, 2.8vw, 34px);
+  letter-spacing: -0.025em; font-weight: 500;
+  margin: 0 0 10px;
+}
+.company-card__desc {
+  font-size: 14.5px; color: var(--fg-mute); margin: 0;
+  max-width: 52ch; text-wrap: pretty; line-height: 1.5;
+}
+.company-card__right {
+  display: flex; flex-direction: column; gap: 18px;
+  align-items: flex-end;
+  min-width: 220px;
+}
+@media (max-width: 760px) {
+  .company-card__right { align-items: flex-start; }
+}
+.company-card__cta {
+  font-size: 13.5px; font-weight: 500;
+  color: var(--accent);
+  padding: 8px 18px;
+  border: var(--bw) solid var(--accent);
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: background .15s var(--ease), color .15s var(--ease);
+}
+.company-card:hover .company-card__cta {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.company-card__facts {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 5px;
+  font-size: 12px; color: var(--fg-dim);
+}
+.company-card__facts li { display: flex; gap: 8px; }
+.company-card__facts li span {
+  color: var(--fg-mute); min-width: 60px;
+}
+
+/* ───── Nav company link ───── */
+.nav__company {
+  color: var(--accent) !important;
+  font-size: 12px;
+  transition: opacity .15s var(--ease) !important;
+}
+.nav__company:hover { opacity: .8; color: var(--accent) !important; }
+
+/* ───── Hero company chip ───── */
+.chip--company {
+  border-color: var(--accent);
+}
+.chip--company .chip__k {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-right-color: var(--accent);
+}
+.chip--company .chip__v {
+  color: var(--accent);
+}
+
+/* ───── Ghost intake CTA ───── */
+.intake-cta-btn--ghost {
+  background: transparent;
+  color: var(--fg-mute);
+  border: var(--bw) solid var(--border);
+}
+.intake-cta-btn--ghost:hover {
+  border-color: var(--accent);
+  color: var(--fg);
+}
+
+/* ───── Footer company link ───── */
+.footer__company-link {
+  color: var(--accent);
+  transition: opacity .15s var(--ease);
+}
+.footer__company-link:hover { opacity: .8; }
+
 /* ───── Small things ───── */
 ::selection { background: color-mix(in oklab, var(--accent) 35%, transparent); color: var(--fg); }
