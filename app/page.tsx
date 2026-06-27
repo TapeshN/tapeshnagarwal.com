@@ -16,6 +16,7 @@ export default function Home() {
             <span className="brand__meta mono">/ qa-sdet-aie</span>
           </a>
           <nav className="nav mono">
+            <a href="#approach">approach</a>
             <a href="#now">now</a>
             <a href="#work">work</a>
             <a href="#playground">playground</a>
@@ -40,14 +41,16 @@ export default function Home() {
           </div>
 
           <h1 className="hero__title">
-            Shipping <span className="serif italic">agentic systems</span> that work in production.
+            I build the systems that answer{" "}
+            <span className="serif italic">&ldquo;should we ship?&rdquo;</span>
           </h1>
 
           <p className="hero__lede">
-            Seven years building reliable distributed systems, automation frameworks, and
-            release infrastructure. Now building MCP-based agent orchestration for release
-            readiness — with typed pipelines, deterministic guardrails, and observable
-            rollouts that keep AI from being just another demo.
+            Senior quality engineer, seven years. In an AI era the scarce skill isn&apos;t writing
+            tests — it&apos;s <strong>evaluation</strong>: defining what &ldquo;good&rdquo; means, building the
+            harness that measures it, and turning that into a release decision you can trust.
+            I ship that as real software — a release-confidence engine on npm and a graded
+            QA-practice platform — not slideware.
           </p>
 
           <div className="hero__quick mono">
@@ -63,6 +66,84 @@ export default function Home() {
             <a className="chip" href="mailto:tapeshnagarwal@gmail.com">
               <span className="chip__k">@</span><span className="chip__v">tapeshnagarwal</span>
             </a>
+          </div>
+        </section>
+
+        {/* ─── Approach / How I think ───────────────────────── */}
+        <section id="approach" className="section wrap">
+          <header className="section__head">
+            <span className="section__num mono">00</span>
+            <h2 className="section__title">How I think</h2>
+            <span className="section__rule" />
+            <span className="section__meta mono">evals · release confidence</span>
+          </header>
+
+          <p className="section__lede">
+            QA taught me the real question is never &ldquo;does it pass?&rdquo; — it&apos;s{" "}
+            <em>&ldquo;how confident are we, and where&apos;s the risk?&rdquo;</em>{" "}
+            So I build the evaluation systems that answer it: the rubric, the harness,
+            the score, and the honest verdict. Each idea below is something I&apos;ve shipped.
+          </p>
+
+          <div className="now-grid">
+            <article className="now-card">
+              <div className="now-card__head mono">
+                <span className="now-card__tag">release confidence</span>
+                <span className="now-card__time">qulib</span>
+              </div>
+              <h3 className="now-card__title">Quality is a decision, not a checkmark</h3>
+              <p className="now-card__body">
+                A green suite means &ldquo;the cases I wrote pass&rdquo; — not &ldquo;ship it.&rdquo;{" "}
+                <a href="https://www.npmjs.com/package/@qulib/core" target="_blank" rel="noopener noreferrer">qulib</a>{" "}
+                fuses live-app evidence, automation maturity, and API coverage into one
+                scored verdict — <em>ship · caution · hold · block</em> — and refuses to
+                fake confidence it hasn&apos;t earned.
+              </p>
+              <ul className="now-card__list mono">
+                <li><span>builds</span>the rubric &amp; the score</li>
+                <li><span>verdict</span>4-state · 0–100</li>
+                <li><span>honesty</span>thin coverage ≠ ready</li>
+              </ul>
+            </article>
+
+            <article className="now-card">
+              <div className="now-card__head mono">
+                <span className="now-card__tag">eval as product</span>
+                <span className="now-card__time">notquality</span>
+              </div>
+              <h3 className="now-card__title">If you can&apos;t grade it, you can&apos;t improve it</h3>
+              <p className="now-card__body">
+                On{" "}
+                <a href="https://notquality.com" target="_blank" rel="noopener noreferrer">NotQuality.com</a>{" "}
+                free-text bug reports are <em>graded</em> against a documented registry —
+                coverage, severity, repro quality — the same way you&apos;d score an LLM&apos;s
+                output. Designing that answer key <em>is</em> the eval-engineering skill.
+              </p>
+              <ul className="now-card__list mono">
+                <li><span>scores</span>severity-weighted</li>
+                <li><span>truth</span>76-bug answer key</li>
+                <li><span>shape</span>graded, not pass/fail</li>
+              </ul>
+            </article>
+
+            <article className="now-card">
+              <div className="now-card__head mono">
+                <span className="now-card__tag">measure first</span>
+                <span className="now-card__time">deterministic</span>
+              </div>
+              <h3 className="now-card__title">Let AI explore; make the checks deterministic</h3>
+              <p className="now-card__body">
+                AI is great at finding unknown gaps — but the moment a judgment matters,
+                it needs a reproducible check behind it. I draw that line on purpose:
+                deterministic gates scale, the model reasons over real signal, and every
+                verdict is one you can re-run and verify yourself.
+              </p>
+              <ul className="now-card__list mono">
+                <li><span>gates</span>reproducible · in CI</li>
+                <li><span>model</span>reasons, doesn&apos;t guess</li>
+                <li><span>proof</span>re-runnable verdicts</li>
+              </ul>
+            </article>
           </div>
         </section>
 
@@ -95,7 +176,7 @@ export default function Home() {
               <span className="now-focus__tag mono">teaching</span>
               <span className="now-focus__title">NotQuality.com</span>
               <span className="now-focus__note">
-                A LeetCode for QA — a deliberately broken app with 48 documented bugs and a
+                A LeetCode for QA — a deliberately broken app with 76 documented bugs and a
                 severity-weighted challenge engine.
               </span>
               <span className="now-focus__meta mono">live · 9 labs · vercel + neon</span>
@@ -183,7 +264,7 @@ export default function Home() {
               <aside className="project__meta">
                 <p className="project__lede">
                   A LeetCode for QA. Nine playground labs built on top of a deliberately
-                  broken application — 48 documented intentional bugs across UI, API,
+                  broken application — 76 documented intentional bugs across UI, API,
                   events, accessibility, performance, and mobile.
                 </p>
                 <ul className="project__bullets">
