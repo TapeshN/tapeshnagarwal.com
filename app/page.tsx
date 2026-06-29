@@ -75,6 +75,10 @@ export default function Home() {
               <span className="chip__k">@</span><span className="chip__v">tapeshnagarwal</span>
             </a>
           </div>
+
+          <p className="hero__voice mono">
+            Voice is &ldquo;we&rdquo;. This site is &ldquo;I&rdquo;.
+          </p>
         </section>
 
         {/* ─── Approach / How I think ───────────────────────── */}
@@ -615,8 +619,10 @@ export default function Home() {
 
           <div className="contact">
             <p className="contact__pitch">
-              Working on AI infrastructure, agentic platforms, or release-engineering at scale?{" "}
+              Want to work together, collaborate, or just talk systems?{" "}
               <span className="serif italic">Send a note.</span>{" "}
+              For client engagements, head to{" "}
+              <a href="https://tapquality.ai" target="_blank" rel="noopener noreferrer" className="contact__inline-link">tapquality.ai</a>.{" "}
               I reply to most things within a day.
             </p>
 

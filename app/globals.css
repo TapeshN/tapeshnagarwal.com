@@ -207,6 +207,13 @@ html[data-theme="light"] .theme-toggle__dot { transform: translateX(12px); }
 }
 
 .hero__quick { display: flex; flex-wrap: wrap; gap: 10px; }
+.hero__voice {
+  font-size: 11px;
+  color: var(--fg-dim);
+  letter-spacing: 0.04em;
+  margin: 18px 0 0;
+  opacity: 0.7;
+}
 .chip {
   display: inline-flex; align-items: stretch;
   border: var(--bw) solid var(--border);
@@ -552,6 +559,14 @@ html[data-theme="light"] .theme-toggle__dot { transform: translateX(12px); }
   text-wrap: balance;
 }
 .contact__pitch .serif { font-size: 1.04em; }
+.contact__inline-link {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in oklab, var(--accent) 40%, transparent);
+  text-underline-offset: 3px;
+  transition: text-decoration-color .15s;
+}
+.contact__inline-link:hover { text-decoration-color: var(--accent); }
 .contact__grid {
   display: grid; gap: 0;
   border-top: var(--bw) solid var(--border);
