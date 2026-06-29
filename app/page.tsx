@@ -46,6 +46,10 @@ export default function Home() {
             <span className="serif italic">work in production.</span>
           </h1>
 
+          <p className="hero__sub mono">
+            I turned a quality obsession into a governed AI engineering org.
+          </p>
+
           <p className="hero__lede">
             Senior quality engineer, seven years. In an AI era the scarce skill isn&apos;t writing
             tests — it&apos;s <strong>evaluation</strong>: defining what &ldquo;good&rdquo; means, building the
@@ -55,6 +59,9 @@ export default function Home() {
           </p>
 
           <div className="hero__quick mono">
+            <a className="chip chip--company" href="https://tapquality.ai" target="_blank" rel="noopener noreferrer">
+              <span className="chip__k">co</span><span className="chip__v">tapquality.ai ↗</span>
+            </a>
             <a className="chip" href="https://github.com/TapeshN" target="_blank" rel="noopener noreferrer">
               <span className="chip__k">gh</span><span className="chip__v">TapeshN</span>
             </a>
@@ -68,6 +75,10 @@ export default function Home() {
               <span className="chip__k">@</span><span className="chip__v">tapeshnagarwal</span>
             </a>
           </div>
+
+          <p className="hero__voice mono">
+            Voice is &ldquo;we&rdquo;. This site is &ldquo;I&rdquo;.
+          </p>
         </section>
 
         {/* ─── Approach / How I think ───────────────────────── */}
@@ -222,8 +233,6 @@ export default function Home() {
           <header className="section__head">
             <span className="section__num mono">03</span>
             <h2 className="section__title">Selected work</h2>
-            <span className="section__rule" />
-            <span className="section__meta mono">3 projects</span>
           </header>
 
           {/* Project 1: NotQuality */}
@@ -380,7 +389,7 @@ export default function Home() {
                   assembles itself, layer by layer.
                 </p>
                 <ul className="project__bullets">
-                  <li>Written by the agents at natural moments — wave completions, pattern discoveries, guardrail events.</li>
+                  <li>Written by the agents at natural moments — loop completions, pattern discoveries, guardrail events.</li>
                   <li>Every entry declares its confidence honestly: <span className="mono">learned · hypothesis · speculation</span>.</li>
                   <li>No prompts, no client data, no implementation code — derivable from first principles.</li>
                   <li>Seed corpus for the retrieval layer: frontmatter becomes embedding metadata.</li>
@@ -610,8 +619,10 @@ export default function Home() {
 
           <div className="contact">
             <p className="contact__pitch">
-              Working on AI infrastructure, agentic platforms, or release-engineering at scale?{" "}
+              Want to work together, collaborate, or just talk systems?{" "}
               <span className="serif italic">Send a note.</span>{" "}
+              For client engagements, head to{" "}
+              <a href="https://tapquality.ai" target="_blank" rel="noopener noreferrer" className="contact__inline-link">tapquality.ai</a>.{" "}
               I reply to most things within a day.
             </p>
 
