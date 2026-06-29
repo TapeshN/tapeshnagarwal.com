@@ -18,8 +18,9 @@ export default function Home() {
           <nav className="nav mono">
             <a href="#approach">approach</a>
             <a href="#now">now</a>
-            <a href="#work">work</a>
             <a href="#playground">playground</a>
+            <a href="#work">work</a>
+            <a href="#experience">experience</a>
             <a href="#stack">stack</a>
             <a href="#contact">contact</a>
             <a href="/intake" className="nav__cta">hire me</a>
@@ -41,8 +42,8 @@ export default function Home() {
           </div>
 
           <h1 className="hero__title">
-            I build the systems that answer{" "}
-            <span className="serif italic">&ldquo;should we ship?&rdquo;</span>
+            Shipping agentic systems that{" "}
+            <span className="serif italic">work in production.</span>
           </h1>
 
           <p className="hero__lede">
@@ -73,7 +74,7 @@ export default function Home() {
         <section id="approach" className="section wrap">
           <header className="section__head">
             <span className="section__num mono">00</span>
-            <h2 className="section__title">How I think</h2>
+            <h2 className="section__title">How I build the systems that answer <span className="serif italic">&ldquo;should we ship?&rdquo;</span></h2>
             <span className="section__rule" />
             <span className="section__meta mono">evals · release confidence</span>
           </header>
@@ -486,10 +487,45 @@ export default function Home() {
           </article>
         </section>
 
+        {/* ─── Experience ───────────────────────────────────── */}
+        <section id="experience" className="section wrap">
+          <header className="section__head">
+            <span className="section__num mono">04</span>
+            <h2 className="section__title">Experience</h2>
+            <span className="section__rule" />
+            <span className="section__meta mono">7 years · QE / SDET</span>
+          </header>
+
+          <ol className="exp">
+            <li className="exp__item">
+              <div className="exp__row">
+                <h3 className="exp__role">Senior Quality Engineer / Senior Specialist</h3>
+                <span className="exp__dates mono">2019 – Present</span>
+              </div>
+              <p className="exp__org mono">Scholastic, Inc. · New York, NY</p>
+              <ul className="exp__bullets">
+                <li>Established AI workspace guardrails and agentic quality workflows adopted across engineering teams; validated deployment readiness via automated feature-flag and code-movement signals.</li>
+                <li>Architected a Cypress/TypeScript ETL automation framework for end-to-end validation of event-data pipelines — ingestion, transformation, aggregation, fixtures, and release-readiness checks.</li>
+                <li>Built and scaled the QA automation strategy and mentored engineers — a REST-Assured/Cucumber/Docker framework validating 500+ endpoints, lifting regression reliability ~50% via Jenkins CI/CD.</li>
+              </ul>
+            </li>
+            <li className="exp__item">
+              <div className="exp__row">
+                <h3 className="exp__role">Quality Engineer — Warehouse Management Systems</h3>
+                <span className="exp__dates mono">Jul 2022 – Jul 2023</span>
+              </div>
+              <p className="exp__org mono">Blue Apron · New York, NY</p>
+              <ul className="exp__bullets">
+                <li>Test automation for warehouse management systems supporting fulfillment operations.</li>
+              </ul>
+            </li>
+          </ol>
+        </section>
+
         {/* ─── Stack ────────────────────────────────────────── */}
         <section id="stack" className="section wrap">
           <header className="section__head">
-            <span className="section__num mono">04</span>
+            <span className="section__num mono">05</span>
             <h2 className="section__title">Stack</h2>
             <span className="section__rule" />
             <span className="section__meta mono">what i reach for</span>
@@ -566,7 +602,7 @@ export default function Home() {
         {/* ─── Contact ──────────────────────────────────────── */}
         <section id="contact" className="section wrap">
           <header className="section__head">
-            <span className="section__num mono">05</span>
+            <span className="section__num mono">06</span>
             <h2 className="section__title">Contact</h2>
             <span className="section__rule" />
             <span className="section__meta mono">open inbox</span>
