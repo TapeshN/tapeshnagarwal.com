@@ -389,7 +389,7 @@ export default function Home() {
                   assembles itself, layer by layer.
                 </p>
                 <ul className="project__bullets">
-                  <li>Written by the agents at natural moments — wave completions, pattern discoveries, guardrail events.</li>
+                  <li>Written by the agents at natural moments — loop completions, pattern discoveries, guardrail events.</li>
                   <li>Every entry declares its confidence honestly: <span className="mono">learned · hypothesis · speculation</span>.</li>
                   <li>No prompts, no client data, no implementation code — derivable from first principles.</li>
                   <li>Seed corpus for the retrieval layer: frontmatter becomes embedding metadata.</li>

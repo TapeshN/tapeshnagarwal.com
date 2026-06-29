@@ -212,7 +212,7 @@ html[data-theme="light"] .theme-toggle__dot { transform: translateX(12px); }
   color: var(--fg-dim);
   letter-spacing: 0.04em;
   margin: 18px 0 0;
-  opacity: 0.4;
+  opacity: 0.55;
 }
 .chip {
   display: inline-flex; align-items: stretch;
