@@ -42,8 +42,8 @@ export default function Home() {
           </div>
 
           <h1 className="hero__title">
-            I build the systems that answer{" "}
-            <span className="serif italic">&ldquo;should we ship?&rdquo;</span>
+            Shipping agentic systems that{" "}
+            <span className="serif italic">work in production.</span>
           </h1>
 
           <p className="hero__lede">
@@ -74,7 +74,7 @@ export default function Home() {
         <section id="approach" className="section wrap">
           <header className="section__head">
             <span className="section__num mono">00</span>
-            <h2 className="section__title">How I think</h2>
+            <h2 className="section__title">How I build the systems that answer <span className="serif italic">&ldquo;should we ship?&rdquo;</span></h2>
             <span className="section__rule" />
             <span className="section__meta mono">evals · release confidence</span>
           </header>
