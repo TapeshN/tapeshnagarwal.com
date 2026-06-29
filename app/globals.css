@@ -147,7 +147,7 @@ html[data-theme="light"] .theme-toggle__dot { transform: translateX(12px); }
 .theme-toggle__label { padding-right: 10px; min-width: 44px; text-align: left; }
 
 /* ───── Hero ───── */
-.hero { padding-top: clamp(72px, 12vw, 140px); padding-bottom: clamp(56px, 8vw, 96px); }
+.hero { padding-top: clamp(44px, 7vw, 96px); padding-bottom: clamp(40px, 5vw, 72px); }
 .hero__meta {
   display: flex; gap: 18px; align-items: center; flex-wrap: wrap;
   font-size: 12px; color: var(--fg-mute); margin-bottom: 28px;
