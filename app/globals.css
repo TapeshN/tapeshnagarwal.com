@@ -192,6 +192,12 @@ html[data-theme="light"] .theme-toggle__dot { transform: translateX(12px); }
   letter-spacing: -0.01em;
 }
 
+.hero__sub {
+  font-size: 13px;
+  color: var(--fg-dim);
+  letter-spacing: 0.02em;
+  margin: 0 0 28px;
+}
 .hero__lede {
   font-size: clamp(16px, 1.4vw, 19px);
   color: var(--fg-mute);
@@ -211,6 +217,9 @@ html[data-theme="light"] .theme-toggle__dot { transform: translateX(12px); }
 .chip:hover { border-color: var(--accent); transform: translateY(-1px); }
 .chip__k { padding: 7px 10px; background: var(--bg-soft); color: var(--fg-dim); border-right: var(--bw) solid var(--border); }
 .chip__v { padding: 7px 12px; color: var(--fg); }
+.chip--company { border-color: var(--accent); }
+.chip--company .chip__k { background: var(--accent); color: var(--accent-ink); border-right-color: var(--accent); }
+.chip--company .chip__v { color: var(--accent); }
 
 /* ───── Section header ───── */
 .section { padding-top: clamp(48px, 7vw, 88px); padding-bottom: clamp(28px, 5vw, 56px); }

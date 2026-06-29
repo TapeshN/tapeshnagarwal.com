@@ -46,6 +46,10 @@ export default function Home() {
             <span className="serif italic">work in production.</span>
           </h1>
 
+          <p className="hero__sub mono">
+            I turned a quality obsession into a governed AI engineering org.
+          </p>
+
           <p className="hero__lede">
             Senior quality engineer, seven years. In an AI era the scarce skill isn&apos;t writing
             tests — it&apos;s <strong>evaluation</strong>: defining what &ldquo;good&rdquo; means, building the
@@ -55,6 +59,9 @@ export default function Home() {
           </p>
 
           <div className="hero__quick mono">
+            <a className="chip chip--company" href="https://tapquality.ai" target="_blank" rel="noopener noreferrer">
+              <span className="chip__k">co</span><span className="chip__v">tapquality.ai ↗</span>
+            </a>
             <a className="chip" href="https://github.com/TapeshN" target="_blank" rel="noopener noreferrer">
               <span className="chip__k">gh</span><span className="chip__v">TapeshN</span>
             </a>
@@ -222,8 +229,6 @@ export default function Home() {
           <header className="section__head">
             <span className="section__num mono">03</span>
             <h2 className="section__title">Selected work</h2>
-            <span className="section__rule" />
-            <span className="section__meta mono">3 projects</span>
           </header>
 
           {/* Project 1: NotQuality */}
